@@ -1,0 +1,17 @@
+{
+	"name": "cabinetsbay/catalog"
+	,"version": "0.0.1"
+	,"description": "A custom module for cabinetsbay.com (Magento 2)"
+	,"type": "magento2-module"
+	,"homepage": "https://github.com/cabinetsbay/catalog"
+	,"license": "MIT"
+	,"authors": [{
+		"name": "Dmitrii Fediuk"
+		,"email": "admin@mage2.pro"
+		,"homepage": "https://upwork.com/fl/mage2pro"
+		,"role": "Developer"
+	}]
+	,"require": {"cabinetsbay/core": "0.3.1", "mage2pro/core": ">=10.9.1"}
+	,"autoload": {"files": ["registration.php"], "psr-4": {"CabinetsBay\\Catalog\\": ""}}
+	,"keywords": ["Magento 2"]
+}
