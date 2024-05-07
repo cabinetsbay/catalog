@@ -1,0 +1,51 @@
+<?php
+# 2024-03-25
+# "Refactor `app/design/frontend/Cabinetsbay/cabinetsbay_default/Magento_Catalog/templates/category/header.phtml`":
+# https://github.com/cabinetsbay/site/issues/105
+use Sharapov\Cabinetsbay\Block\Category\View as B;
+$tabs = [
+	# 2024-04-14
+	# "Delete the useless «Product Overview» title from the frontend category pages":
+	# https://github.com/cabinetsbay/site/issues/133
+	'overview'=> ['content' => 'block']
+	,'specifications' => ['content' => 'cb_specs', 'title' => 'Specifications']
+	,'cabinet-assembly' => ['content' => 'cb_assembly', 'title' => 'Cabinet Assembly']
+	,'matching-styles' => ['content' => 'block', 'title' => 'Matching Styles']
+]; /** @var string => array(string => string) $tabs */
+/** @var B $b */
+# 2024-03-25 These tabs are visible on wide screens only.
+echo df_tag('ul', 'category-menu', df_map_k(function(string $k, array $v):string {return df_tag('li',
+	['data-role' => 'title']
+	, df_tag('a', [
+		# 2024-03-25
+		# "The contents of the tabs «Product Overview», «Specifications», «Cabinet Assembly», «Matching Styles»
+		# should be always visible": https://github.com/cabinetsbay/site/issues/120
+		'class' => 'scrollTo'
+		,'href' => "#$k"
+	], $v['title'])
+# 2024-04-14
+# "Delete the useless «Product Overview» tab from the frontend category pages": https://github.com/cabinetsbay/site/issues/132
+);}, df_tail($tabs)));
+foreach ($tabs as $k => $v) {/** @var string $k */ /** @var array(string => string) $v */ ?>
+<!-- 2024-03-25
+1) "The contents of the tabs «Product Overview», «Specifications», «Cabinet Assembly», «Matching Styles»
+should be always visible": https://github.com/cabinetsbay/site/issues/120
+2) I added the `active` class. -->
+	<div id='<?= $k ?>' class='active category-tab' data-role='content'>
+<!-- 2024-03-25
+1) "The contents of the tabs «Product Overview», «Specifications», «Cabinet Assembly», «Matching Styles»
+should be always visible": https://github.com/cabinetsbay/site/issues/120
+2) I removed the code:
+	<span class='submenu-toggle' data-role='trigger' tabindex='0'></span>
+	https://github.com/cabinetsbay/core/blob/0.1.4/view/frontend/templates/catalog/category/tabs.phtml#L30
+2024-04-14 "Delete the useless «Product Overview» title from the frontend category pages":
+https://github.com/cabinetsbay/site/issues/133 -->
+		<?=	df_tag_if_ne(dfa($v, 'title', ''), 'label') ?>
+		<div class='content'>
+			<?= 'block' === ($c = $v['content'])
+					? df_block_output('CabinetsBay_Core', "catalog/category/tabs/$k", ['b' => $b])
+					: $b->l3a($c)
+			?>
+		</div>
+	</div>
+<?php } ?>

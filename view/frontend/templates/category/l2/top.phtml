@@ -1,0 +1,19 @@
+<?php
+# 2024-03-14
+# "Refactor `app/design/frontend/Cabinetsbay/cabinetsbay_default/Magento_Catalog/templates/category/view.phtml`":
+# https://github.com/cabinetsbay/site/issues/112
+use Sharapov\Cabinetsbay\Block\Category\View as B;
+/** @var B $b */
+[$id, $title] = $b->isRTA() ? ['rta', 'RTA'] : ['pa', 'Pre-Assembled']; /** @var string $id */ /** @var string $title */
+?>
+<!-- 2024-04-14
+"Titles are incorrectly displayed on the `/pre-assembled-cabinets.html` and  `/ready-to-assemble-cabinets.html` pages":
+https://github.com/cabinetsbay/site/issues/135 -->
+<div class='cb-faq'>Frequently Asked Questions about <?= $title ?> Cabinets
+	<a href="#faq-purchase" class="scrollTo">Learn More...</a>
+</div>
+<div class='product-page-info'><?= df_cms_block("product-page-{$id}-info") ?></div>
+<div class='product-page-how-to-shop'>
+	<?= df_cms_block("product-page-{$id}-how-to-shop") ?>
+	<a class='scrollTo' href='#how-to-shop'>Learn More...</a>
+</div>

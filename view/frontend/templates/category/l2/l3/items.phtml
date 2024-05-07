@@ -1,0 +1,24 @@
+<?php
+# 2024-03-14
+# "Refactor `app/design/frontend/Cabinetsbay/cabinetsbay_default/Magento_Catalog/templates/category/view.phtml`":
+# https://github.com/cabinetsbay/site/issues/112
+use Magento\Catalog\Model\Category as C;
+use Magento\Catalog\Model\ResourceModel\Category\Collection as CC;
+/** @var CC $cc */
+if (count($cc)) { ?>
+	<div class='c-products-grid'>
+		<ul id='products_list'>
+			<?php foreach ($cc as $c) {/** @var C $c */ ?>
+				<li
+					data-sortercolor='<?= $c['cb_kitchen_color'] ?>'
+					data-sorterconstruction='<?= $c['cb_kitchen_type'] ?>'
+					data-sorterprice='<?= preg_replace('/[^0-9.]+/', '', $c['cb_kitchen_price']) ?>'
+					data-sorterstyle='<?= $c['cb_kitchen_style'] ?>'
+				>
+					<?= df_block_output('CabinetsBay_Core', 'catalog/category/item', ['c' => $c]) ?>
+				</li>
+			<?php }	?>
+		</ul>
+	</div>
+<?php
+}

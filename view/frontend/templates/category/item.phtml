@@ -1,0 +1,20 @@
+<?php
+# 2024-03-25
+# "Refactor `app/design/frontend/Cabinetsbay/cabinetsbay_default/Magento_Catalog/templates/category/header.phtml`":
+# https://github.com/cabinetsbay/site/issues/105
+use Magento\Catalog\Model\Category as C;
+/** @var C $c */
+?>
+<a href='<?= $c->getUrl() ?>'>
+	<div><?= $c->getName() ?></div>
+	<?php if ($set = $c['cb_kitchen_set']) { ?>
+		<div class='size-price'>
+			<b><?= $set ?></b><?= $c['cb_kitchen_price'] ?>
+		</div>
+	<?php } ?>
+	<img border='0' src='<?= $c->getImageUrl() ?>'/>
+</a>
+<div>
+	<a href='<?= $c->getUrl() ?>'>Shop cabinets</a>
+	<a href='<?= $c['cb_door_sample_link'] ?>'>Order sample</a>
+</div>

@@ -1,0 +1,65 @@
+<?php
+# 2024-03-25
+# "Refactor `app/design/frontend/Cabinetsbay/cabinetsbay_default/Magento_Catalog/templates/category/header.phtml`":
+# https://github.com/cabinetsbay/site/issues/105
+use Magento\Catalog\Model\Category as C;
+use Sharapov\Cabinetsbay\Block\Category\View as B;
+/** @var B $b */
+df_assert($l3 = $b->l3()); /** @var C $l3 */
+?>
+<div class='category-info'>
+	<div class='category-tab-left'>
+		<?php if ($ii = $b->images()) { ?>
+			<ul id='category-gallery' class='gallery list-unstyled cS-hidden'>
+				<?=
+					df_cc_n(df_map_k($ii, function(string $f, string $t):string {return
+						df_tag('li', [
+							'data-src' => $u = df_media_path2url("wysiwyg/catalog-carousel-images/$f")
+							,'data-thumb' => $u
+						], df_tag('img', ['alt' => $t,'src' => $u, 'title' => $t]))
+					;}))
+				?>
+			</ul>
+			<script>
+				require(['jquery', 'domReady!'], function($) {
+					let totalWidth = 0;
+					$('.owl-thumb-item').each(function() {
+						totalWidth += parseInt($(this).width(), 10);
+					});
+					$('.owl-thumbs').css('width', (totalWidth + 20)+'px');
+				});
+			</script>
+		<?php }
+		else {
+			try {
+				if ($url = $l3->getImageUrl()) {
+					echo df_catalog_output()->categoryAttribute(
+						$l3
+						,df_tag('div', 'category-image', df_tag('img', [
+							'alt' => $l3->getName()
+							,'class' => 'image'
+							,'src' => $url
+							,'title' => $l3->getName()
+						]))
+						,'image'
+					);
+				}
+			} catch (\Magento\Framework\Exception\LocalizedException $e) {}
+		}
+		?>
+	</div>
+	<div class="category-tab-right">
+		<?php if ($_description = $l3->getDescription()): ?>
+			<div class="category-description">
+				<?= df_catalog_output()->categoryAttribute($l3, $_description, 'description') ?>
+			</div>
+		<?php endif; ?>
+		<div class="category-subdescription">
+			<div class="table-view">
+				<a href="/sample-doors.html">Order Sample</a>
+				<a href="/kitchen-design-assistance.html">Free Design</a>
+			</div>
+			<a class="scrollTo" href="#layer-product-list">Shop Cabinets Below <i></i></a>
+		</div>
+	</div>
+</div>

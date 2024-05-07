@@ -1,0 +1,20 @@
+<?php
+# 2024-03-25
+# "Refactor `app/design/frontend/Cabinetsbay/cabinetsbay_default/Magento_Catalog/templates/category/header.phtml`":
+# https://github.com/cabinetsbay/site/issues/105
+use Magento\Catalog\Model\Category as C;
+use Sharapov\Cabinetsbay\Block\Category\View as B;
+/** @var B $b */
+echo $b->l3a('cb_styles');
+if (count($cc = $b->l3p())) { /** @var C[] $cc */ ?>
+	<div class='c-products-grid'>
+		<ul>
+			<?php foreach ($cc as $c) {/** @var C $c */ ?>
+				<li>
+					<?= df_block_output('CabinetsBay_Core', 'catalog/category/item', ['c' => $c]) ?>
+				</li>
+			<?php } ?>
+		</ul>
+	</div>
+	<?php
+}

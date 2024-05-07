@@ -1,0 +1,63 @@
+<?php
+# 2024-03-14
+# "Refactor `app/design/frontend/Cabinetsbay/cabinetsbay_default/Magento_Catalog/templates/category/view.phtml`":
+# https://github.com/cabinetsbay/site/issues/112
+use Magento\Catalog\Model\Category as C;
+use Magento\Catalog\Model\ResourceModel\Category\Collection as CC;
+/** @var CC $cc */
+$options = function(string $k) use($cc):string {
+	$all = ['<li data-style="all">All</li>'];
+	return df_cc_n(array_merge($all, df_map(
+		# 2024-03-24
+		# "Some values are duplicated in filter dropdowns on the «Ready to Assemble Cabinets» page":
+		# https://github.com/cabinetsbay/site/issues/115
+		array_unique(df_map($cc, function(C $c) use($k):string {return $c["cb_kitchen_{$k}"];}))
+		,function(string $s):string {return df_tag('li', ['data-style' => $s], $s);}
+	)));
+};
+?>
+<div class="category-filterblock short-first">
+	<div>
+		<label>Filter</label>
+	</div>
+	<div>
+		<div id="dropdown-price" class="category-filter-dropdown" data-mage-init='{"dropdown":{}}'>
+			<span class="action toggle" data-toggle="dropdown" aria-haspopup="true">
+				<span>Price</span>
+			</span>
+			<ul class="dropdown">
+				<li data-sortby="asc">Low-High</li>
+				<li data-sortby="desc">High-Low</li>
+			</ul>
+		</div>
+	</div>
+	<div>
+		<div id="dropdown-color" class="category-filter-dropdown" data-mage-init='{"dropdown":{}}'>
+			<span class="action toggle" data-toggle="dropdown" aria-haspopup="true">
+				<span>Color</span>
+			</span>
+			<ul class="dropdown">
+				<li data-sortby="lighter">Lighter</li>
+				<li data-sortby="darker">Darker</li>
+			</ul>
+		</div>
+	</div>
+	<div>
+		<div id="dropdown-style" class="category-filter-dropdown" data-mage-init='{"dropdown":{}}'>
+			<span class="action toggle" data-toggle="dropdown" aria-haspopup="true">
+				<span>Style (All)</span>
+			</span>
+			<ul class="dropdown">
+				<?= $options('style') ?>
+			</ul>
+		</div>
+	</div>
+	<div>
+		<div id="dropdown-construction" class="category-filter-dropdown" data-mage-init='{"dropdown":{}}'>
+			<span class="action toggle" data-toggle="dropdown" aria-haspopup="true">
+				<span>Cabinet Construction (All)</span>
+			</span>
+			<ul class="dropdown"><?= $options('type'); ?></ul>
+		</div>
+	</div>
+</div>

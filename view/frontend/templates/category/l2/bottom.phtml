@@ -1,0 +1,21 @@
+<?php
+# 2024-03-15
+# "Refactor `app/design/frontend/Cabinetsbay/cabinetsbay_default/Magento_Catalog/templates/category/view.phtml`":
+# https://github.com/cabinetsbay/site/issues/112
+use Sharapov\Cabinetsbay\Block\Category\View as B;
+/** @var B $b */
+$id = $b->isRTA() ? 'rta' : 'pa'; /** @var string $id */
+?>
+<div class='product-page-faq' id='faq-purchase'>
+	<?= df_cms_block("product-page-faq-{$id}-welcome") ?>
+</div>
+<div class='product-page-faq'>
+	<?= df_cms_block("product-page-faq-{$id}-body") ?>
+</div>
+<div class='product-page-how-to-shop mobile-view' id='how-to-shop'>
+	<?= df_cms_block("product-page-{$id}-how-to-shop") ?>
+	<a href='#products_list' class='scrollTo'>Click here to start shopping</a>
+</div>
+<div class="product-page-info mobile-view">
+	<?= df_cms_block("product-page-{$id}-info") ?>
+</div>
