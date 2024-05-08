@@ -34,4 +34,10 @@ interface Attribute {
 	 * @used-by app/code/Sharapov/Cabinetsbay/Setup/InstallData.php
 	 */
 	const SPECS = 'cb_specs';
+
+	/**
+	 * 2024-05-08
+	 * @used-by app/code/Sharapov/Cabinetsbay/Setup/InstallData.php
+	 */
+	const STYLES = 'cb_styles';
 }
