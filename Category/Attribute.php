@@ -39,6 +39,12 @@ interface Attribute {
 	 * 2024-05-08
 	 * @used-by app/code/Sharapov/Cabinetsbay/Setup/InstallData.php
 	 */
+	const KITCHEN_STYLE = 'cb_kitchen_style';
+
+	/**
+	 * 2024-05-08
+	 * @used-by app/code/Sharapov/Cabinetsbay/Setup/InstallData.php
+	 */
 	const SPECS = 'cb_specs';
 
 	/**
