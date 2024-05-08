@@ -6,6 +6,7 @@ namespace CabinetsBay\Catalog\Category;
 interface Attribute {
 	/**
 	 * 2024-05-08
+	 * @used-by app/code/Sharapov/Cabinetsbay/Setup/InstallData.php
 	 * @used-by vendor/cabinetsbay/core/view/frontend/templates/home/popular.phtml
 	 */
 	const DOOR_SAMPLE_LINK = 'cb_door_sample_link';
@@ -21,4 +22,10 @@ interface Attribute {
 	 * @used-by vendor/cabinetsbay/core/view/frontend/templates/home/popular.phtml
 	 */
 	const KITCHEN_SET = 'cb_kitchen_set';
+
+	/**
+	 * 2024-05-08
+	 * @used-by app/code/Sharapov/Cabinetsbay/Setup/InstallData.php
+	 */
+	const SPECS = 'cb_specs';
 }
