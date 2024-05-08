@@ -13,4 +13,9 @@ final class Category {
 	 * 2024-05-08
 	 */
 	const KITCHEN_PRICE = 'cb_kitchen_price';
+
+	/**
+	 * 2024-05-08
+	 */
+	const KITCHEN_SET = 'cb_kitchen_set';
 }
