@@ -7,6 +7,12 @@ interface Attribute {
 	/**
 	 * 2024-05-08
 	 * @used-by app/code/Sharapov/Cabinetsbay/Setup/InstallData.php
+	 */
+	const ASSEMBLY = 'cb_assembly';
+
+	/**
+	 * 2024-05-08
+	 * @used-by app/code/Sharapov/Cabinetsbay/Setup/InstallData.php
 	 * @used-by vendor/cabinetsbay/core/view/frontend/templates/home/popular.phtml
 	 */
 	const DOOR_SAMPLE_LINK = 'cb_door_sample_link';
