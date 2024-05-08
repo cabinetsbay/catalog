@@ -1,9 +1,9 @@
 <?php
-namespace CabinetsBay\Catalog;
+namespace CabinetsBay\Catalog\Category;
 # 2024-05-08
 # "Refactor the names of categories' custom attributes as constants":
 # https://github.com/cabinetsbay/catalog/issues/1
-final class Category {
+interface Attribute {
 	/**
 	 * 2024-05-08
 	 */
