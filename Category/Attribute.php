@@ -7,7 +7,7 @@ interface Attribute {
 	 * @used-by \Sharapov\Cabinetsbay\Plugin\Category\DataProvider::_getFieldsMap()
 	 * @used-by \Sharapov\Cabinetsbay\Setup\UpgradeData::p100()
 	 * @used-by \Sharapov\Cabinetsbay\Setup\UpgradeData::p101()
-	 * @used-by vendor/cabinetsbay/catalog/view/frontend/templates/category/tabs.phtml
+	 * @used-by vendor/cabinetsbay/catalog/view/frontend/templates/category/l3/tabs.phtml
 	 */
 	const ASSEMBLY = 'cb_assembly';
 
@@ -80,7 +80,7 @@ interface Attribute {
 	 * @used-by \Sharapov\Cabinetsbay\Plugin\Category\DataProvider::_getFieldsMap()
 	 * @used-by \Sharapov\Cabinetsbay\Setup\UpgradeData::p100()
 	 * @used-by \Sharapov\Cabinetsbay\Setup\UpgradeData::p101()
-	 * @used-by vendor/cabinetsbay/catalog/view/frontend/templates/category/tabs.phtml
+	 * @used-by vendor/cabinetsbay/catalog/view/frontend/templates/category/l3/tabs.phtml
 	 */
 	const SPECS = 'cb_specs';
 
@@ -89,7 +89,7 @@ interface Attribute {
 	 * @used-by \Sharapov\Cabinetsbay\Plugin\Category\DataProvider::_getFieldsMap()
 	 * @used-by \Sharapov\Cabinetsbay\Setup\UpgradeData::p100()
 	 * @used-by \Sharapov\Cabinetsbay\Setup\UpgradeData::p101()
-	 * @used-by vendor/cabinetsbay/catalog/view/frontend/templates/category/tabs/matching-styles.phtml
+	 * @used-by vendor/cabinetsbay/catalog/view/frontend/templates/category/l3/tabs/matching-styles.phtml
 	 */
 	const STYLES = 'cb_styles';
 }
