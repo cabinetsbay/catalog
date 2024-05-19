@@ -15,7 +15,10 @@ $tabs = [
 ]; /** @var string => array(string => string) $tabs */
 /** @var B $b */
 # 2024-03-25 These tabs are visible on wide screens only.
-echo df_tag('ul', 'category-menu', df_map_k(function(string $k, array $v):string {return df_tag('li',
+// 2024-05-19
+// "Refactor `app/design/frontend/Cabinetsbay/cabinetsbay_default/web/css/source/_extend.less`":
+// https://github.com/cabinetsbay/site/issues/119
+echo df_tag('ul', 'wide-screen-menu', df_map_k(function(string $k, array $v):string {return df_tag('li',
 	['data-role' => 'title']
 	, df_tag('a', [
 		# 2024-03-25
