@@ -10,7 +10,7 @@ use Magento\Catalog\Model\Category as C;
 	<div><?= $c->getName() ?></div>
 	<?php if ($set = $c[A::KITCHEN_SET]) { ?>
 		<div class='size-price'>
-			<b><?= $set ?></b><?= $c['cb_kitchen_price'] ?>
+			<b><?= $set ?></b><?= $c[A::KITCHEN_PRICE] ?>
 		</div>
 	<?php } ?>
 	<img border='0' src='<?= $c->getImageUrl() ?>'/>
