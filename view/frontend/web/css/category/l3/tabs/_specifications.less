@@ -1,0 +1,14 @@
+// 2024-05-19
+// "Refactor `app/design/frontend/Cabinetsbay/cabinetsbay_default/web/css/source/_extend.less`":
+// https://github.com/cabinetsbay/site/issues/119
+&#specifications table:first-of-type {
+	border: 1px solid #d4d4d4; margin-bottom: 2em;
+	& tr {
+		&:nth-child(even) {background: #d6e9eb;}
+		&:nth-child(odd) {background: #f9f9f9;}
+		& td {
+			height: 5em; vertical-align: top;
+			&:first-child {font-weight: bold; min-width: 8em; width: 35%;}
+		}
+	}
+}

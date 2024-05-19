@@ -6,27 +6,6 @@
 		> .content {
 			> p:last-of-type {margin-bottom: 0;}
 		}
-		&.category-tab-specifications {
-			& table {
-				&:first-of-type {
-					border: 1px solid #d4d4d4;
-					margin-bottom: 2em;
-					& tr {
-						&:nth-child(even) {background: #d6e9eb;}
-						&:nth-child(odd) {background: #f9f9f9;}
-						& td {
-							height: 5em;
-							vertical-align: top;
-							&:first-child {
-								width: 35%;
-								min-width: 8em;
-								font-weight: bold;
-							}
-						}
-					}
-				}
-			}
-		}
 		@media screen and (min-width: 681px) {> label {display: none;}}
 		@media screen and (max-width: 680px) {
 			background-color: #cbeaec;
@@ -61,5 +40,6 @@
 		// "Refactor `app/design/frontend/Cabinetsbay/cabinetsbay_default/web/css/source/_extend.less`":
 		// https://github.com/cabinetsbay/site/issues/119
 		@import 'tabs/_overview.less';
+		@import 'tabs/_specifications.less';
 	}
 }
