@@ -26,6 +26,7 @@ interface Attribute {
 	 * 2024-05-08
 	 * @used-by \Sharapov\Cabinetsbay\Plugin\Category\DataProvider::_getFieldsMap()
 	 * @used-by \Sharapov\Cabinetsbay\Setup\UpgradeData::p100()
+	 * @used-by vendor/cabinetsbay/catalog/view/frontend/templates/category/l2/l3/items.phtml
 	 */
 	const KITCHEN_COLOR = 'cb_kitchen_color';
 
