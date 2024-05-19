@@ -17,6 +17,7 @@ interface Attribute {
 	 * 2024-05-08
 	 * @used-by \Sharapov\Cabinetsbay\Setup\UpgradeData::p100()
 	 * @used-by \Sharapov\Cabinetsbay\Setup\UpgradeData::p101()
+	 * @used-by vendor/cabinetsbay/catalog/view/frontend/templates/category/item.phtml
 	 * @used-by vendor/cabinetsbay/core/view/frontend/templates/home/popular.phtml
 	 */
 	const DOOR_SAMPLE_LINK = 'cb_door_sample_link';
