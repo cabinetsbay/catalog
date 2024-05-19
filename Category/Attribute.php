@@ -33,6 +33,7 @@ interface Attribute {
 	 * @used-by \Sharapov\Cabinetsbay\Plugin\Category\DataProvider::_getFieldsMap()
 	 * @used-by \Sharapov\Cabinetsbay\Setup\UpgradeData::p100()
 	 * @used-by \Sharapov\Cabinetsbay\Setup\UpgradeData::p101()
+	 * @used-by vendor/cabinetsbay/catalog/view/frontend/templates/category/item.phtml
 	 * @used-by vendor/cabinetsbay/core/view/frontend/templates/home/popular.phtml
 	 */
 	const KITCHEN_PRICE = 'cb_kitchen_price';
