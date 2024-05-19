@@ -20,7 +20,7 @@ echo df_tag('ul', 'category-menu', df_map_k(function(string $k, array $v):string
 	, df_tag('a', [
 		# 2024-03-25
 		# "The contents of the tabs «Product Overview», «Specifications», «Cabinet Assembly», «Matching Styles»
-		# should be always visible": https://github.com/cabinetsbay/site/issues/120
+		# should be always visible": https://github.com/cabinetsbay/catalog/issues/11
 		'class' => 'scrollTo'
 		,'href' => "#$k"
 	], $v['title'])
@@ -30,12 +30,12 @@ echo df_tag('ul', 'category-menu', df_map_k(function(string $k, array $v):string
 foreach ($tabs as $k => $v) {/** @var string $k */ /** @var array(string => string) $v */ ?>
 <!-- 2024-03-25
 1) "The contents of the tabs «Product Overview», «Specifications», «Cabinet Assembly», «Matching Styles»
-should be always visible": https://github.com/cabinetsbay/site/issues/120
+should be always visible": https://github.com/cabinetsbay/catalog/issues/11
 2) I added the `active` class. -->
 	<div id='<?= $k ?>' class='active category-tab' data-role='content'>
 <!-- 2024-03-25
 1) "The contents of the tabs «Product Overview», «Specifications», «Cabinet Assembly», «Matching Styles»
-should be always visible": https://github.com/cabinetsbay/site/issues/120
+should be always visible": https://github.com/cabinetsbay/catalog/issues/11
 2) I removed the code:
 	<span class='submenu-toggle' data-role='trigger' tabindex='0'></span>
 	https://github.com/cabinetsbay/core/blob/0.1.4/view/frontend/templates/catalog/category/tabs.phtml#L30
