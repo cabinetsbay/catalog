@@ -6,8 +6,8 @@ namespace CabinetsBay\Catalog\Category;
 interface Attribute {
 	/**
 	 * 2024-05-08
-	 * @used-by app/code/Sharapov/Cabinetsbay/Setup/InstallData.php
 	 * @used-by \Sharapov\Cabinetsbay\Plugin\Category\DataProvider::_getFieldsMap()
+	 * @used-by app/code/Sharapov/Cabinetsbay/Setup/InstallData.php
 	 */
 	const ASSEMBLY = 'cb_assembly';
 
@@ -20,12 +20,14 @@ interface Attribute {
 
 	/**
 	 * 2024-05-08
+	 * @used-by \Sharapov\Cabinetsbay\Plugin\Category\DataProvider::_getFieldsMap()
 	 * @used-by app/code/Sharapov/Cabinetsbay/Setup/InstallData.php
 	 */
 	const KITCHEN_COLOR = 'cb_kitchen_color';
 
 	/**
 	 * 2024-05-08
+	 * @used-by \Sharapov\Cabinetsbay\Plugin\Category\DataProvider::_getFieldsMap()
 	 * @used-by app/code/Sharapov/Cabinetsbay/Setup/InstallData.php
 	 * @used-by vendor/cabinetsbay/core/view/frontend/templates/home/popular.phtml
 	 */
@@ -33,6 +35,7 @@ interface Attribute {
 
 	/**
 	 * 2024-05-08
+	 * @used-by \Sharapov\Cabinetsbay\Plugin\Category\DataProvider::_getFieldsMap()
 	 * @used-by app/code/Sharapov/Cabinetsbay/Setup/InstallData.php
 	 * @used-by vendor/cabinetsbay/core/view/frontend/templates/home/popular.phtml
 	 */
@@ -40,30 +43,35 @@ interface Attribute {
 
 	/**
 	 * 2024-05-08
+	 * @used-by \Sharapov\Cabinetsbay\Plugin\Category\DataProvider::_getFieldsMap()
 	 * @used-by app/code/Sharapov/Cabinetsbay/Setup/InstallData.php
 	 */
 	const KITCHEN_STYLE = 'cb_kitchen_style';
 
 	/**
 	 * 2024-05-08
+	 * @used-by \Sharapov\Cabinetsbay\Plugin\Category\DataProvider::_getFieldsMap()
 	 * @used-by app/code/Sharapov/Cabinetsbay/Setup/InstallData.php
 	 */
 	const KITCHEN_TYPE = 'cb_kitchen_type';
 
 	/**
 	 * 2024-05-08
+	 * @used-by \Sharapov\Cabinetsbay\Plugin\Category\DataProvider::_getFieldsMap()
 	 * @used-by app/code/Sharapov/Cabinetsbay/Setup/InstallData.php
 	 */
 	const MATCHING_PRODUCTS = 'cb_matching_products';
 
 	/**
 	 * 2024-05-08
+	 * @used-by \Sharapov\Cabinetsbay\Plugin\Category\DataProvider::_getFieldsMap()
 	 * @used-by app/code/Sharapov/Cabinetsbay/Setup/InstallData.php
 	 */
 	const SPECS = 'cb_specs';
 
 	/**
 	 * 2024-05-08
+	 * @used-by \Sharapov\Cabinetsbay\Plugin\Category\DataProvider::_getFieldsMap()
 	 * @used-by app/code/Sharapov/Cabinetsbay/Setup/InstallData.php
 	 */
 	const STYLES = 'cb_styles';
