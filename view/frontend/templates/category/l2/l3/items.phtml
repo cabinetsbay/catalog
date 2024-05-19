@@ -12,7 +12,7 @@ if (count($cc)) { ?>
 			<?php foreach ($cc as $c) {/** @var C $c */ ?>
 				<li
 					data-sortercolor='<?= $c[A::KITCHEN_COLOR] ?>'
-					data-sorterconstruction='<?= $c['cb_kitchen_type'] ?>'
+					data-sorterconstruction='<?= $c[A::KITCHEN_TYPE] ?>'
 					data-sorterprice='<?= preg_replace('/[^0-9.]+/', '', $c['cb_kitchen_price']) ?>'
 					data-sorterstyle='<?= $c['cb_kitchen_style'] ?>'
 				>
