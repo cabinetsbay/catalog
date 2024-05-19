@@ -20,7 +20,7 @@ if (cb_category_is_l2($c)) {
 else {
 	# 2024-03-11
 	# 1) "The `H1` tag is duplicated on the frontend category pages": https://github.com/cabinetsbay/site/issues/104
-	# 2) "Category names are not shown on narrow screens": https://github.com/cabinetsbay/site/issues/108
+	# 2) "Category names are not shown on narrow screens": https://github.com/cabinetsbay/catalog/issues/20
 	echo $b->title();
 	echo df_block_output('CabinetsBay_Catalog', 'category/tabs', ['b' => $b]);
 }
