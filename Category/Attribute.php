@@ -7,6 +7,7 @@ interface Attribute {
 	/**
 	 * 2024-05-08
 	 * @used-by app/code/Sharapov/Cabinetsbay/Setup/InstallData.php
+	 * @used-by \Sharapov\Cabinetsbay\Plugin\Category\DataProvider::_getFieldsMap()
 	 */
 	const ASSEMBLY = 'cb_assembly';
 
