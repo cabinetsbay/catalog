@@ -31,6 +31,7 @@ interface Attribute {
 	 * 2024-05-08
 	 * @used-by \Sharapov\Cabinetsbay\Plugin\Category\DataProvider::_getFieldsMap()
 	 * @used-by \Sharapov\Cabinetsbay\Setup\InstallData::install()
+	 * @used-by \Sharapov\Cabinetsbay\Setup\UpgradeData::upgrade()
 	 * @used-by vendor/cabinetsbay/core/view/frontend/templates/home/popular.phtml
 	 */
 	const KITCHEN_PRICE = 'cb_kitchen_price';
