@@ -11,7 +11,7 @@ if (count($cc = $b->l3p())) { /** @var C[] $cc */ ?>
 		<ul>
 			<?php foreach ($cc as $c) {/** @var C $c */ ?>
 				<li>
-					<?= df_block_output('CabinetsBay_Core', 'catalog/category/item', ['c' => $c]) ?>
+					<?= df_block_output('CabinetsBay_Catalog', 'category/item', ['c' => $c]) ?>
 				</li>
 			<?php } ?>
 		</ul>

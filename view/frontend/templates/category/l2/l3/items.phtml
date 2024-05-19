@@ -16,7 +16,7 @@ if (count($cc)) { ?>
 					data-sorterprice='<?= preg_replace('/[^0-9.]+/', '', $c[A::KITCHEN_PRICE]) ?>'
 					data-sorterstyle='<?= $c[A::KITCHEN_STYLE] ?>'
 				>
-					<?= df_block_output('CabinetsBay_Core', 'catalog/category/item', ['c' => $c]) ?>
+					<?= df_block_output('CabinetsBay_Catalog', 'category/item', ['c' => $c]) ?>
 				</li>
 			<?php }	?>
 		</ul>
