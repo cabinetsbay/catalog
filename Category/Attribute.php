@@ -9,6 +9,7 @@ interface Attribute {
 	 * @used-by \Sharapov\Cabinetsbay\Plugin\Category\DataProvider::_getFieldsMap()
 	 * @used-by \Sharapov\Cabinetsbay\Setup\UpgradeData::p100()
 	 * @used-by \Sharapov\Cabinetsbay\Setup\UpgradeData::p101()
+	 * @used-by vendor/cabinetsbay/catalog/view/frontend/templates/category/tabs.phtml
 	 */
 	const ASSEMBLY = 'cb_assembly';
 
