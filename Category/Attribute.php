@@ -68,6 +68,7 @@ interface Attribute {
 	 * 2024-05-08
 	 * @used-by \Sharapov\Cabinetsbay\Plugin\Category\DataProvider::_getFieldsMap()
 	 * @used-by \Sharapov\Cabinetsbay\Setup\InstallData::install()
+	 * @used-by \Sharapov\Cabinetsbay\Setup\UpgradeData::upgrade()
 	 */
 	const SPECS = 'cb_specs';
 
