@@ -92,11 +92,13 @@
 					}
 					@media screen and (max-width: 680px) {padding-left: 0;}
 				}
+				// 2024-05-19 Dmitrii Fediuk https://upwork.com/fl/mage2pro
+				// "Improve frontend category pages": https://github.com/cabinetsbay/catalog/issues/17
 				@media screen and (max-width: 680px) {
-					> .category-tab-left, > .category-tab-right {
-						float: none;
-						margin-top: 1.2em;
-						width: 100%;
+					> div {
+						float: none; width: 100%;
+						&.category-tab-left {margin-top: .4rem;}
+						&.category-tab-right {margin-top: 1rem;}
 					}
 				}
 			}
