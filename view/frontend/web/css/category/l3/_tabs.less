@@ -3,9 +3,7 @@
 	> .category-tab {
 		margin-bottom: 2em;
 		&:not(:last-child) {border-bottom: 1px solid #689aa5; padding-bottom: 2em;}
-		> .content {
-			> p:last-of-type {margin-bottom: 0;}
-		}
+		> .content > p:last-of-type {margin-bottom: 0;}
 		@media screen and (min-width: 681px) {> label {display: none;}}
 		@media screen and (max-width: 680px) {
 			background-color: #cbeaec;
@@ -22,6 +20,7 @@
 				background-color: #ffffff;
 				> .content {display: block;}
 			}
+			> .content {display: none; margin: 0;}
 			> label {
 				color: #232a3a;
 				cursor: pointer;
@@ -34,7 +33,6 @@
 				width: 100%;
 				> .submenu-toggle {right: 0; top: 10px;}
 			}
-			> .content {display: none; margin: 0;}
 		}
 		// 2024-05-19
 		// "Refactor `app/design/frontend/Cabinetsbay/cabinetsbay_default/web/css/source/_extend.less`":
