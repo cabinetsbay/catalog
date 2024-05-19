@@ -44,7 +44,7 @@ https://github.com/cabinetsbay/site/issues/133 -->
 		<?=	df_tag_if_ne(dfa($v, 'title', ''), 'label') ?>
 		<div class='content'>
 			<?= 'block' === ($c = $v['content'])
-					? df_block_output('CabinetsBay_Core', "catalog/category/tabs/$k", ['b' => $b])
+					? df_block_output('CabinetsBay_Catalog', "category/tabs/$k", ['b' => $b])
 					: $b->l3a($c)
 			?>
 		</div>
