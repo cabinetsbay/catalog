@@ -8,7 +8,7 @@ use Sharapov\Cabinetsbay\Block\Category\View as B;
 df_assert($l3 = $b->l3()); /** @var C $l3 */
 ?>
 <div class='category-info'>
-	<div class='category-tab-left'>
+	<div class='cb-gallery'>
 		<?php if ($ii = $b->images()) { ?>
 			<ul id='category-gallery' class='gallery list-unstyled cS-hidden'>
 				<?=
@@ -48,7 +48,7 @@ df_assert($l3 = $b->l3()); /** @var C $l3 */
 		}
 		?>
 	</div>
-	<div class="category-tab-right">
+	<div class="cb-text">
 		<?php if ($_description = $l3->getDescription()): ?>
 			<div class="category-description">
 				<?= df_catalog_output()->categoryAttribute($l3, $_description, 'description') ?>
