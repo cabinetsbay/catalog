@@ -10,7 +10,7 @@ $options = function(string $k) use($cc):string {
 	return df_cc_n(array_merge($all, df_map(
 		# 2024-03-24
 		# "Some values are duplicated in filter dropdowns on the «Ready to Assemble Cabinets» page":
-		# https://github.com/cabinetsbay/site/issues/115
+		# https://github.com/cabinetsbay/catalog/issues/14
 		array_unique(df_map($cc, function(C $c) use($k):string {return $c["cb_kitchen_{$k}"];}))
 		,function(string $s):string {return df_tag('li', ['data-style' => $s], $s);}
 	)));
