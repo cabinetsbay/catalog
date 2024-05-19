@@ -53,6 +53,12 @@ interface Attribute {
 	 * 2024-05-08
 	 * @used-by app/code/Sharapov/Cabinetsbay/Setup/InstallData.php
 	 */
+	const MATCHING_PRODUCTS = 'cb_matching_products';
+
+	/**
+	 * 2024-05-08
+	 * @used-by app/code/Sharapov/Cabinetsbay/Setup/InstallData.php
+	 */
 	const SPECS = 'cb_specs';
 
 	/**
