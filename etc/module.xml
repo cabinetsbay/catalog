@@ -4,7 +4,7 @@
     xsi:noNamespaceSchemaLocation='urn:magento:framework:Module/etc/module.xsd'
 >
 <!-- 2024-05-07 "Transfer the catalog-related code to the `CabinetsBay_Catalog` module":
-https://github.com/cabinetsbay/core/issues/6 -->
+https://github.com/cabinetsbay/catalog/issues/2 -->
 	<module name='CabinetsBay_Catalog' setup_version='0.0.1'>
 		<sequence>
 			<module name='Df_Core'/>
