@@ -1,5 +1,5 @@
 <?xml version='1.0'?>
-<!-- 2024-05-23 Dmitrii Fediuk https://upwork.com/fl/mage2pro
+<!-- 2024-05-23
 # 1) "Refactor the `Sharapov_Cabinetsbay` module": https://github.com/cabinetsbay/site/issues/98
 # 2) "Transfer the catalog-related code to the `CabinetsBay_Catalog` module": https://github.com/cabinetsbay/catalog/issues/2  -->
 <config>
