@@ -16,7 +16,7 @@ interface Attribute {
 	 * @used-by \Sharapov\Cabinetsbay\Setup\UpgradeData::p100()
 	 * @used-by \Sharapov\Cabinetsbay\Setup\UpgradeData::p101()
 	 * @used-by vendor/cabinetsbay/catalog/view/frontend/templates/category/item.phtml
-	 * @used-by vendor/cabinetsbay/core/view/frontend/templates/home/popular.phtml
+	 * @used-by vendor/cabinetsbay/catalog/view/frontend/templates/popular.phtml
 	 */
 	const DOOR_SAMPLE_LINK = 'cb_door_sample_link';
 
@@ -35,7 +35,7 @@ interface Attribute {
 	 * @used-by \Sharapov\Cabinetsbay\Setup\UpgradeData::p101()
 	 * @used-by vendor/cabinetsbay/catalog/view/frontend/templates/category/item.phtml
 	 * @used-by vendor/cabinetsbay/catalog/view/frontend/templates/category/l2/l3/items.phtml
-	 * @used-by vendor/cabinetsbay/core/view/frontend/templates/home/popular.phtml
+	 * @used-by vendor/cabinetsbay/catalog/view/frontend/templates/popular.phtml
 	 */
 	const KITCHEN_PRICE = 'cb_kitchen_price';
 
@@ -45,7 +45,7 @@ interface Attribute {
 	 * @used-by \Sharapov\Cabinetsbay\Setup\UpgradeData::p100()
 	 * @used-by \Sharapov\Cabinetsbay\Setup\UpgradeData::p101()
 	 * @used-by vendor/cabinetsbay/catalog/view/frontend/templates/category/item.phtml
-	 * @used-by vendor/cabinetsbay/core/view/frontend/templates/home/popular.phtml
+	 * @used-by vendor/cabinetsbay/catalog/view/frontend/templates/popular.phtml
 	 */
 	const KITCHEN_SET = 'cb_kitchen_set';
 
