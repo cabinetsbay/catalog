@@ -22,9 +22,9 @@ final class DataProvider {
 	 * 2024-05-23 "Refactor the `Sharapov_Cabinetsbay` module": https://github.com/cabinetsbay/site/issues/98
 	 * @used-by self::STUB()
 	 */
-	private static function _prepareFieldsMeta(array $fieldsMap, array $fieldsMeta):array {
+	private static function _prepareFieldsMeta(array $map, array $fieldsMeta):array {
 		$result = [];
-		foreach ($fieldsMap as $fieldSet => $fields) {
+		foreach ($map as $fieldSet => $fields) {
 			foreach ($fields as $field) {
 				if (isset($fieldsMeta[$field])) {
 					$result[$fieldSet]['children'][$field]['arguments']['data']['config'] = $fieldsMeta[$field];
