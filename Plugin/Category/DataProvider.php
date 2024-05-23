@@ -8,6 +8,7 @@ use Magento\Catalog\Model\Category\DataProvider as Sb;
 final class DataProvider {
 	/**
 	 * 2024-05-23 "Refactor the `Sharapov_Cabinetsbay` module": https://github.com/cabinetsbay/site/issues/98
+	 * @see \Magento\Catalog\Model\Category\DataProvider::prepareMeta()
 	 * @used-by self::STUB()
 	 */
 	function afterPrepareMeta(Sb $sb, array $r):array {return array_merge_recursive($r, self::_prepareFieldsMeta(
