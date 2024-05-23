@@ -24,7 +24,7 @@ final class DataProvider {
 	 * @used-by self::afterPrepareMeta()
 	 */
 	private static function p(array $map, array $meta):array {
-		$r = [];
+		$r = []; /** @var array $r */
 		foreach ($map as $fieldSet => $ff) {
 			foreach ($ff as $f) {
 				if (isset($meta[$f])) {
