@@ -11,7 +11,7 @@ final class DataProvider {
 	 * @see \Magento\Catalog\Model\Category\DataProvider::prepareMeta()
 	 * @used-by self::STUB()
 	 */
-	function afterPrepareMeta(Sb $sb, array $r):array {return array_merge_recursive($r, self::_prepareFieldsMeta(
+	function afterPrepareMeta(Sb $sb, array $r):array {return array_merge_recursive($r, self::p(
 		['content' => [
 			A::ASSEMBLY, A::KITCHEN_COLOR, A::KITCHEN_PRICE, A::KITCHEN_SET, A::KITCHEN_STYLE, A::KITCHEN_TYPE,
 			A::MATCHING_PRODUCTS, A::SPECS, A::STYLES
@@ -23,7 +23,7 @@ final class DataProvider {
 	 * 2024-05-23 "Refactor the `Sharapov_Cabinetsbay` module": https://github.com/cabinetsbay/site/issues/98
 	 * @used-by self::afterPrepareMeta()
 	 */
-	private static function _prepareFieldsMeta(array $map, array $meta):array {
+	private static function p(array $map, array $meta):array {
 		$r = [];
 		foreach ($map as $fieldSet => $fields) {
 			foreach ($fields as $field) {
