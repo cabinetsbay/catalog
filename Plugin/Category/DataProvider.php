@@ -7,8 +7,7 @@ use CabinetsBay\Catalog\Category\Attribute as A;
 use Magento\Catalog\Model\Category\DataProvider as Sb;
 final class DataProvider {
 	/**
-	 * 2024-05-23
-	 * "Refactor the `Sharapov_Cabinetsbay` module": https://github.com/cabinetsbay/site/issues/98
+	 * 2024-05-23 "Refactor the `Sharapov_Cabinetsbay` module": https://github.com/cabinetsbay/site/issues/98
 	 * @used-by self::STUB()
 	 */
 	function afterPrepareMeta(Sb $sb, $result) {return array_merge_recursive($result, self::_prepareFieldsMeta(
@@ -20,8 +19,7 @@ final class DataProvider {
 	));}
 
 	/**
-	 * 2024-05-23
-	 * "Refactor the `Sharapov_Cabinetsbay` module": https://github.com/cabinetsbay/site/issues/98
+	 * 2024-05-23 "Refactor the `Sharapov_Cabinetsbay` module": https://github.com/cabinetsbay/site/issues/98
 	 * @used-by self::STUB()
 	 */
 	private static function _prepareFieldsMeta($fieldsMap, $fieldsMeta) {
