@@ -26,10 +26,10 @@ final class DataProvider {
 	 */
 	private static function p(array $map, array $meta):array {
 		$r = []; /** @var array $r */
-		foreach ($map as $fieldSet => $ff) {/** @var string $fieldSet */ /** @var string[] $ff */
+		foreach ($map as $fs => $ff) {/** @var string $fs */ /** @var string[] $ff */
 			foreach ($ff as $f) { /** @var string $f */
 				if ($v = dfa($meta, $f)) {
-					$r[$fieldSet]['children'][$f]['arguments']['data']['config'] = $v;
+					$r[$fs]['children'][$f]['arguments']['data']['config'] = $v;
 				}
 			}
 		}
