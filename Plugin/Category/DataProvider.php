@@ -10,7 +10,7 @@ final class DataProvider {
 	 * 2024-05-23 "Refactor the `Sharapov_Cabinetsbay` module": https://github.com/cabinetsbay/site/issues/98
 	 * @used-by self::STUB()
 	 */
-	function afterPrepareMeta(Sb $sb, $result) {return array_merge_recursive($result, self::_prepareFieldsMeta(
+	function afterPrepareMeta(Sb $sb, array $r):array {return array_merge_recursive($r, self::_prepareFieldsMeta(
 		['content' => [
 			A::ASSEMBLY, A::KITCHEN_COLOR, A::KITCHEN_PRICE, A::KITCHEN_SET, A::KITCHEN_STYLE, A::KITCHEN_TYPE,
 			A::MATCHING_PRODUCTS, A::SPECS, A::STYLES
