@@ -29,6 +29,7 @@ final class DataProvider {
 		foreach ($map as $fs => $ff) {/** @var string $fs */ /** @var string[] $ff */
 			foreach ($ff as $f) { /** @var string $f */
 				if ($v = dfa($meta, $f)) {
+					# 2024-05-23 https://github.com/magento/magento2/blob/2.4.7/app/code/Magento/Catalog/view/adminhtml/ui_component/category_form.xml#L161
 					$r[$fs]['children'][$f]['arguments']['data']['config'] = $v;
 				}
 			}
