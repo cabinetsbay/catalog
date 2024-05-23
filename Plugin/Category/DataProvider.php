@@ -27,8 +27,8 @@ final class DataProvider {
 		$r = []; /** @var array $r */
 		foreach ($map as $fieldSet => $ff) {/** @var string $fieldSet */ /** @var string[] $ff */
 			foreach ($ff as $f) { /** @var string $f */
-				if (isset($meta[$f])) {
-					$r[$fieldSet]['children'][$f]['arguments']['data']['config'] = $meta[$f];
+				if ($v = dfa($meta, $f)) {
+					$r[$fieldSet]['children'][$f]['arguments']['data']['config'] = $v;
 				}
 			}
 		}
