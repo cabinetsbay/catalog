@@ -4,7 +4,7 @@ namespace CabinetsBay\Catalog\Category;
 interface Attribute {
 	/**
 	 * 2024-05-08
-	 * @used-by \Sharapov\Cabinetsbay\Plugin\Category\DataProvider::_getFieldsMap()
+	 * @used-by \Sharapov\Cabinetsbay\Plugin\Category\DataProvider::afterPrepareMeta()
 	 * @used-by \Sharapov\Cabinetsbay\Setup\UpgradeData::p100()
 	 * @used-by \Sharapov\Cabinetsbay\Setup\UpgradeData::p101()
 	 * @used-by vendor/cabinetsbay/catalog/view/frontend/templates/category/l3/tabs.phtml
@@ -22,7 +22,7 @@ interface Attribute {
 
 	/**
 	 * 2024-05-08
-	 * @used-by \Sharapov\Cabinetsbay\Plugin\Category\DataProvider::_getFieldsMap()
+	 * @used-by \Sharapov\Cabinetsbay\Plugin\Category\DataProvider::afterPrepareMeta()
 	 * @used-by \Sharapov\Cabinetsbay\Setup\UpgradeData::p100()
 	 * @used-by vendor/cabinetsbay/catalog/view/frontend/templates/category/l2/l3/items.phtml
 	 */
@@ -30,7 +30,7 @@ interface Attribute {
 
 	/**
 	 * 2024-05-08
-	 * @used-by \Sharapov\Cabinetsbay\Plugin\Category\DataProvider::_getFieldsMap()
+	 * @used-by \Sharapov\Cabinetsbay\Plugin\Category\DataProvider::afterPrepareMeta()
 	 * @used-by \Sharapov\Cabinetsbay\Setup\UpgradeData::p100()
 	 * @used-by \Sharapov\Cabinetsbay\Setup\UpgradeData::p101()
 	 * @used-by vendor/cabinetsbay/catalog/view/frontend/templates/category/item.phtml
@@ -41,7 +41,7 @@ interface Attribute {
 
 	/**
 	 * 2024-05-08
-	 * @used-by \Sharapov\Cabinetsbay\Plugin\Category\DataProvider::_getFieldsMap()
+	 * @used-by \Sharapov\Cabinetsbay\Plugin\Category\DataProvider::afterPrepareMeta()
 	 * @used-by \Sharapov\Cabinetsbay\Setup\UpgradeData::p100()
 	 * @used-by \Sharapov\Cabinetsbay\Setup\UpgradeData::p101()
 	 * @used-by vendor/cabinetsbay/catalog/view/frontend/templates/category/item.phtml
@@ -51,7 +51,7 @@ interface Attribute {
 
 	/**
 	 * 2024-05-08
-	 * @used-by \Sharapov\Cabinetsbay\Plugin\Category\DataProvider::_getFieldsMap()
+	 * @used-by \Sharapov\Cabinetsbay\Plugin\Category\DataProvider::afterPrepareMeta()
 	 * @used-by \Sharapov\Cabinetsbay\Setup\UpgradeData::p100()
 	 * @used-by \Sharapov\Cabinetsbay\Setup\UpgradeData::p101()
 	 * @used-by vendor/cabinetsbay/catalog/view/frontend/templates/category/l2/l3/items.phtml
@@ -60,7 +60,7 @@ interface Attribute {
 
 	/**
 	 * 2024-05-08
-	 * @used-by \Sharapov\Cabinetsbay\Plugin\Category\DataProvider::_getFieldsMap()
+	 * @used-by \Sharapov\Cabinetsbay\Plugin\Category\DataProvider::afterPrepareMeta()
 	 * @used-by \Sharapov\Cabinetsbay\Setup\UpgradeData::p100()
 	 * @used-by \Sharapov\Cabinetsbay\Setup\UpgradeData::p101()
 	 * @used-by vendor/cabinetsbay/catalog/view/frontend/templates/category/l2/l3/items.phtml
@@ -71,14 +71,14 @@ interface Attribute {
 	 * 2024-05-08
 	 * 2024-05-23 https://github.com/cabinetsbay/catalog/labels/matching-products
 	 * @used-by \Sharapov\Cabinetsbay\Block\Category\View::l3p()
-	 * @used-by \Sharapov\Cabinetsbay\Plugin\Category\DataProvider::_getFieldsMap()
+	 * @used-by \Sharapov\Cabinetsbay\Plugin\Category\DataProvider::afterPrepareMeta()
 	 * @used-by \Sharapov\Cabinetsbay\Setup\UpgradeData::p100()
 	 */
 	const MATCHING_PRODUCTS = 'cb_matching_products';
 
 	/**
 	 * 2024-05-08
-	 * @used-by \Sharapov\Cabinetsbay\Plugin\Category\DataProvider::_getFieldsMap()
+	 * @used-by \Sharapov\Cabinetsbay\Plugin\Category\DataProvider::afterPrepareMeta()
 	 * @used-by \Sharapov\Cabinetsbay\Setup\UpgradeData::p100()
 	 * @used-by \Sharapov\Cabinetsbay\Setup\UpgradeData::p101()
 	 * @used-by vendor/cabinetsbay/catalog/view/frontend/templates/category/l3/tabs.phtml
@@ -87,7 +87,7 @@ interface Attribute {
 
 	/**
 	 * 2024-05-08
-	 * @used-by \Sharapov\Cabinetsbay\Plugin\Category\DataProvider::_getFieldsMap()
+	 * @used-by \Sharapov\Cabinetsbay\Plugin\Category\DataProvider::afterPrepareMeta()
 	 * @used-by \Sharapov\Cabinetsbay\Setup\UpgradeData::p100()
 	 * @used-by \Sharapov\Cabinetsbay\Setup\UpgradeData::p101()
 	 * @used-by vendor/cabinetsbay/catalog/view/frontend/templates/category/l3/tabs/matching-styles.phtml
