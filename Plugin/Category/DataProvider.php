@@ -25,8 +25,8 @@ final class DataProvider {
 	 */
 	private static function p(array $map, array $meta):array {
 		$r = []; /** @var array $r */
-		foreach ($map as $fieldSet => $ff) {
-			foreach ($ff as $f) {
+		foreach ($map as $fieldSet => $ff) {/** @var string $fieldSet */ /** @var string[] $ff */
+			foreach ($ff as $f) { /** @var string $f */
 				if (isset($meta[$f])) {
 					$r[$fieldSet]['children'][$f]['arguments']['data']['config'] = $meta[$f];
 				}
