@@ -1,0 +1,40 @@
+<?php
+# 2024-05-06
+# "Refactor `app/design/frontend/Cabinetsbay/cabinetsbay_default/Magento_Theme/templates/homepage.phtml`":
+# https://github.com/cabinetsbay/core/issues/8
+# 2024-05-23
+# "Refactor the «Popular RTA Cabinet Styles» home page block as a widget":
+# https://github.com/cabinetsbay/catalog/issues/27
+use CabinetsBay\Catalog\Category\Attribute as A;
+use Exception as E;
+use Magento\Catalog\Model\Category as C;
+use Magento\Catalog\Model\ResourceModel\Category\Collection as CC;
+if (count(
+	$cc = df_category_c(array_slice(df_csv_parse_int(df_cfg('cabinetsbay_settings/general/popular_products')), 0, 3))
+		->addAttributeToSelect([A::DOOR_SAMPLE_LINK, A::KITCHEN_PRICE, A::KITCHEN_SET, 'image', 'name'])
+		->joinUrlRewrite()
+)) { /** @var CC $cc */ ?>
+	<div class="homepage-popular c-products-grid">
+		<?= df_cms_block('home-page-popular-kitchen') ?>
+		<ul> <?php
+		foreach ($cc as $c) {
+			/** @var C $c */
+			print '<li>';
+			print '<a href="' . $c->getUrl() . '">';
+			print '<div>' . $c->getName() . '</div>';
+			if ($c[A::KITCHEN_SET] != '') {
+			  print '<div class="size-price"><b>' . $c[A::KITCHEN_SET] . '</b>' . $c[A::KITCHEN_PRICE] . '</div>';
+			}
+			try {
+				print '<img src="' . $c->getImageUrl() . '" border="0" />';
+			} catch (E $e) {}
+			print '</a>';
+			print '<div><a href="' . $c->getUrl()
+				. '">Shop cabinets</a><a href="' . $c[A::DOOR_SAMPLE_LINK].'">Order sample</a></div>';
+			print '</li>';
+		}
+		print '</ul>';
+		 ?>
+	</div>
+<?php
+}
