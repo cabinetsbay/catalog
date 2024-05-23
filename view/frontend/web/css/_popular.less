@@ -1,0 +1,22 @@
+// 2024-05-19 "Improve the frontend home page": https://github.com/cabinetsbay/core/issues/7
+> .homepage-popular {
+	margin-top: 8em;
+	position: relative;
+	max-width: 1140px;
+	> ul > li {
+		@media screen and (min-width: 681px) {
+			width: calc(100% / 3);
+			&:first-of-type, &:nth-child(3n+4) {padding-left: 0; padding-right: 1.2em;}
+			&:last-of-type, &:nth-child(3n+3) {padding-left: 1.2em; padding-right: 0;}
+		}
+	}
+	> h2 {
+		display: block;
+		position: absolute;
+		top: -2.6em;
+		margin: 0;
+		width: 100%;
+		text-align: center;
+		@media screen and (max-width: 680px) {  top: -2em;  }
+	}
+}
