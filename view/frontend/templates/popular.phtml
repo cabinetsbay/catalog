@@ -16,8 +16,7 @@ if (count(
 	<div class="homepage-popular c-products-grid">
 		<?= df_cms_block('home-page-popular-kitchen') ?>
 		<ul> <?php
-		foreach ($cc as $c) {
-			/** @var C $c */
+		foreach ($cc as $c) {/** @var C $c */
 			print '<li>';
 			print '<a href="' . $c->getUrl() . '">';
 			print '<div>' . $c->getName() . '</div>';
