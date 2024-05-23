@@ -7,13 +7,19 @@
 use CabinetsBay\Catalog\Category\Attribute as A;
 use Magento\Catalog\Model\Category as C;
 use Magento\Catalog\Model\ResourceModel\Category\Collection as CC;
+/**
+ * 2024-05-23
+ * @see \CabinetsBay\Catalog\B\Featured::p()
+ * @var int[] $categoryIds
+ * @var string $cmsBlockId
+ */
 if (count(
-	$cc = df_category_c(array_slice(df_csv_parse_int(df_cfg('cabinetsbay_settings/general/popular_products')), 0, 3))
+	$cc = df_category_c($categoryIds)
 		->addAttributeToSelect([A::DOOR_SAMPLE_LINK, A::KITCHEN_PRICE, A::KITCHEN_SET, 'image', 'name'])
 		->joinUrlRewrite()
 )) { /** @var CC $cc */ ?>
 	<div class="homepage-popular c-products-grid">
-		<?= df_cms_block('home-page-popular-kitchen') ?>
+		<?= df_cms_block($cmsBlockId) ?>
 		<ul>
 		<?php foreach ($cc as $c) {/** @var C $c */ ?>
 			<li>
