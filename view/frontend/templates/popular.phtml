@@ -20,8 +20,8 @@ if (count(
 			<li>
 				<a href='<?= $c->getUrl() ?>'>
 					<div><?= $c->getName() ?></div>
-					<?php if ($c[A::KITCHEN_SET]) { ?>
-						<div class='size-price'><b><?= $c[A::KITCHEN_SET] ?></b><?= $c[A::KITCHEN_PRICE] ?></div>
+					<?php if ($ks = $c[A::KITCHEN_SET]) { ?>
+						<div class='size-price'><b><?= $ks ?></b><?= $c[A::KITCHEN_PRICE] ?></div>
 					<?php } ?>
 					<img border='0' src='<?= $c->getImageUrl() ?>' />
 				</a>
