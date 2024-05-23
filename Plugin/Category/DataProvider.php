@@ -12,6 +12,7 @@ final class DataProvider {
 	 * @used-by self::STUB()
 	 */
 	function afterPrepareMeta(Sb $sb, array $r):array {return array_merge_recursive($r, self::p(
+		# 2024-05-23 https://github.com/magento/magento2/blob/2.4.7/app/code/Magento/Catalog/view/adminhtml/ui_component/category_form.xml#L156-L223
 		['content' => [
 			A::ASSEMBLY, A::KITCHEN_COLOR, A::KITCHEN_PRICE, A::KITCHEN_SET, A::KITCHEN_STYLE, A::KITCHEN_TYPE,
 			A::MATCHING_PRODUCTS, A::SPECS, A::STYLES
