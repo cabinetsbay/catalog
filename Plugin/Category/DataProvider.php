@@ -23,14 +23,14 @@ final class DataProvider {
 	 * @used-by self::STUB()
 	 */
 	private static function _prepareFieldsMeta(array $map, array $meta):array {
-		$result = [];
+		$r = [];
 		foreach ($map as $fieldSet => $fields) {
 			foreach ($fields as $field) {
 				if (isset($meta[$field])) {
-					$result[$fieldSet]['children'][$field]['arguments']['data']['config'] = $meta[$field];
+					$r[$fieldSet]['children'][$field]['arguments']['data']['config'] = $meta[$field];
 				}
 			}
 		}
-		return $result;
+		return $r;
 	}
 }
