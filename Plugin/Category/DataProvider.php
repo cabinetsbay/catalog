@@ -21,7 +21,7 @@ final class DataProvider {
 
 	/**
 	 * 2024-05-23 "Refactor the `Sharapov_Cabinetsbay` module": https://github.com/cabinetsbay/site/issues/98
-	 * @used-by self::STUB()
+	 * @used-by self::afterPrepareMeta()
 	 */
 	private static function _prepareFieldsMeta(array $map, array $meta):array {
 		$r = [];
