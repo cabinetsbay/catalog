@@ -27,7 +27,8 @@
 				&:last-of-type {margin-bottom: 0;}
 			}
 			@media screen and (min-width: 681px) {
-				width: 32.3%;
+				// 2024-05-24 `width: 32.3%;` does not work on non-L2 pages for an unknown reason.
+				width: 32.1%; body.cb-category-level-2 & {width: 32.3%;}
 				&:nth-child(3n + 2) {padding: 0 1.55%;} // 2024-05-24 https://stackoverflow.com/a/13691714
 			}
 			> a {
