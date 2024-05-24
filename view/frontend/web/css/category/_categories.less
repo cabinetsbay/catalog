@@ -29,8 +29,9 @@
 				width: calc((100% - 1.2em) / 3);
 				padding: 0 .6em;
 				box-sizing: border-box;
-				&:nth-child(3n) {padding-left: 0;}
-				&:nth-child(3n + 2) {padding-right: 0;}
+				// 2024-05-24 https://stackoverflow.com/a/13691714
+				&:nth-child(3n + 1) {padding-left: 0;}
+				&:nth-child(3n) {padding-right: 0;}
 			}
 			> a {
 				display: block;
