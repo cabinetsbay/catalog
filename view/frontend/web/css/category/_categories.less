@@ -26,7 +26,9 @@
 				&:last-of-type {margin-bottom: 0;}
 			}
 			@media screen and (min-width: 681px) {
-				padding-left: 1.2em; &:nth-child(3n + 1) {padding-left: 0;} // 2024-05-24 https://stackoverflow.com/a/13691714
+				//padding-left: 1.2em; &:nth-child(3n + 1) {padding-left: 0;} // 2024-05-24 https://stackoverflow.com/a/13691714
+				&:nth-child(3n) {padding-left: 1.2em;}
+				&:nth-child(3n + 1) {padding-right: 1.2em;}
 				width: 32.3%;
 			}
 			> a {
