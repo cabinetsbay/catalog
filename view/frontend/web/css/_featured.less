@@ -2,4 +2,8 @@
 // 2024-05-23
 // "Refactor the «Popular RTA Cabinet Styles» home page block as a widget": https://github.com/cabinetsbay/catalog/issues/27
 // 2024-05-24 "Refactor `.c-products-grid` blocks to a reusable code": https://github.com/cabinetsbay/catalog/issues/29
-.cb-featured > h2 {margin: 2rem 0 1rem 0; text-align: center; width: 100%;}
+.cb-featured > h2 {
+	text-align: center; width: 100%;
+	@media screen and (max-width: 680px) {margin: 1rem 0 0.5rem 0;}
+	@media screen and (min-width: 681px) {margin: 2rem 0 1rem 0;}
+}
