@@ -18,6 +18,8 @@ if (count(
 		->addAttributeToSelect([A::DOOR_SAMPLE_LINK, A::KITCHEN_PRICE, A::KITCHEN_SET, 'image', 'name'])
 		->joinUrlRewrite()
 )) { /** @var CC $cc */ ?>
+	<?php # @todo 2024-05-24 "Refactor `.c-products-grid` blocks to a reusable code":
+	# https://github.com/cabinetsbay/catalog/issues/29 ?>
 	<div class='c-products-grid cb-featured'>
 		<?= df_cms_block($cmsBlockId) ?>
 		<ul>
