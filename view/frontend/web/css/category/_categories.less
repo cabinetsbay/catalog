@@ -21,18 +21,14 @@
 			position: relative;
 			text-align: center;
 			@media screen and (max-width: 680px) {
-				width: 100%;
 				margin-bottom: 1em;
+				width: 100%;
 				&:last-of-type {margin-bottom: 0;}
 			}
 			@media screen and (min-width: 681px) {
-				width: calc((100% - 1.2em) / 3);
-				//padding: 0 .6em;
 				box-sizing: border-box;
-				padding-left: 1.2em;
-				// 2024-05-24 https://stackoverflow.com/a/13691714
-				&:nth-child(3n + 1) {padding-left: 0;}
-				//&:nth-child(3n) {padding-right: 0;}
+				padding-left: 1.2em; &:nth-child(3n + 1) {padding-left: 0;} // 2024-05-24 https://stackoverflow.com/a/13691714
+				width: calc((100% - 1.2em) / 3);
 			}
 			> a {
 				display: block;
