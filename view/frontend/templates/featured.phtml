@@ -18,7 +18,7 @@ if (count(
 		->addAttributeToSelect([A::DOOR_SAMPLE_LINK, A::KITCHEN_PRICE, A::KITCHEN_SET, 'image', 'name'])
 		->joinUrlRewrite()
 )) { /** @var CC $cc */ ?>
-	<div class="homepage-popular c-products-grid">
+	<div class='c-products-grid cb-featured'>
 		<?= df_cms_block($cmsBlockId) ?>
 		<ul>
 		<?php foreach ($cc as $c) {/** @var C $c */ ?>
