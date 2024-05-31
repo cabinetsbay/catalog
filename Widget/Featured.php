@@ -60,7 +60,8 @@ class Featured
 	/**
 	 * 2024-05-31
 	 * @override
-	 * @see \Magento\Framework\View\Element\AbstractBlock::toHtml()
+	 * @see \Magento\Framework\View\Element\AbstractBlock::_toHtml()
+	 * @used-by \Magento\Framework\View\Element\AbstractBlock::_loadCache()
 	 */
-	function toHtml():string {return __METHOD__;}
+	final protected function _toHtml():string {return __METHOD__;}
 }
