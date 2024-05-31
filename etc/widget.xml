@@ -12,7 +12,7 @@ https://github.com/magento/magento2/blob/2.4.7/app/code/Magento/Widget/etc/widge
 2.3) https://www.w3.org/TR/xmlschema-2#ID
 2.4) https://www.w3.org/TR/1999/REC-xml-names-19990114#NT-NCName -->
 	<widget class='CabinetsBay\Catalog\Widget\Featured' id='CabinetsBay.Catalog.Widget.Featured'>
-		<description>It looks like the «Popular RTA Cabinet Styles» block of the home page</description>
+		<description>Similar to the «Popular RTA Cabinet Styles» block of the home page</description>
 		<label>CabinetsBay — Featured Products</label>
 		<parameters>
 			<parameter name='categoryIds' required='true' visible='true' xsi:type='text'>
