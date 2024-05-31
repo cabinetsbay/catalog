@@ -2,4 +2,5 @@
 namespace CabinetsBay\Catalog\Widget;
 # 2024-05-31
 # "Refactor the «Popular RTA Cabinet Styles» home page block as a widget" https://github.com/cabinetsbay/catalog/issues/27
-final class Featured {}
+/** @final Unable to use the PHP «final» keyword here because of the M2 code generation. */
+class Featured {}
