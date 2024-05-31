@@ -1,7 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<!-- 2024-05-31
-"Refactor the «Popular RTA Cabinet Styles» home page block as a widget" https://github.com/cabinetsbay/catalog/issues/27 -->
 <widgets
 	xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
 	xsi:noNamespaceSchemaLocation='urn:magento:module:Magento_Widget:etc/widget.xsd'
-></widgets>
+>
+<!-- 2024-05-31
+"Refactor the «Popular RTA Cabinet Styles» home page block as a widget" https://github.com/cabinetsbay/catalog/issues/27 -->
+	<widget class='CabinetsBay\Catalog\Widget\Featured' id='CabinetsBay\Catalog\Widget\Featured'>
+
+	</widget>
+</widgets>
