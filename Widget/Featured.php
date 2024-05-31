@@ -50,6 +50,16 @@ class Featured
 	 * 			$tags[] = $block->getIdentities();
 	 * 		}
 	 * https://github.com/magento/magento2/blob/2.4.7/app/code/Magento/PageCache/Model/Layout/LayoutPlugin.php#L91-L97
+	 * 3) @used-by \Magento\PageCache\Controller\Block\Esi::execute():
+	 * 		if ($blockInstance instanceof \Magento\Framework\DataObject\IdentityInterface) {
+	 * 			$response->setHeader('X-Magento-Tags', implode(',', $blockInstance->getIdentities()));
+	 * 		}
+	 * https://github.com/magento/magento2/blob/2.4.7/app/code/Magento/PageCache/Controller/Block/Esi.php#L27-L29
+	 * 4) @used-by \Magento\Framework\App\Cache\Tag\Strategy\Identifier::getTags():
+	 * 		if ($object instanceof \Magento\Framework\DataObject\IdentityInterface) {
+	 * 			return $object->getIdentities();
+	 * 		}
+	 * https://github.com/magento/magento2/blob/2.4.7/lib/internal/Magento/Framework/App/Cache/Tag/Strategy/Identifier.php#L24-L26
 	 */
 	function getIdentities():array {return [];}
 
