@@ -14,5 +14,10 @@ https://github.com/magento/magento2/blob/2.4.7/app/code/Magento/Widget/etc/widge
 	<widget class='CabinetsBay\Catalog\Widget\Featured' id='CabinetsBay.Catalog.Widget.Featured'>
 		<description>It looks like the «Popular RTA Cabinet Styles» block of the home page</description>
 		<label>CabinetsBay — Featured Products</label>
+		<parameters>
+			<parameter name='categoryIds' required='true' visible='true' xsi:type='text'>
+				<label translate='true'>IDs of the categories to show (comma-separated)</label>
+			</parameter>			
+		</parameters>
 	</widget>
 </widgets>
