@@ -69,5 +69,5 @@ class Featured
 	 * @see \Magento\Framework\View\Element\AbstractBlock::_toHtml()
 	 * @used-by \Magento\Framework\View\Element\AbstractBlock::_loadCache()
 	 */
-	final protected function _toHtml():string {return $this['categoryIds'];}
+	final protected function _toHtml():string {return df_cc_br($this['cmsBlockId'], $this['categoryIds']);}
 }
