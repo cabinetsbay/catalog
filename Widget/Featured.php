@@ -69,5 +69,5 @@ class Featured
 	 * @see \Magento\Framework\View\Element\AbstractBlock::_toHtml()
 	 * @used-by \Magento\Framework\View\Element\AbstractBlock::_loadCache()
 	 */
-	final protected function _toHtml():string {return __METHOD__;}
+	final protected function _toHtml():string {return $this['categoryIds'];}
 }
