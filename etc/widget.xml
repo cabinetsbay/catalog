@@ -4,8 +4,14 @@
 	xsi:noNamespaceSchemaLocation='urn:magento:module:Magento_Widget:etc/widget.xsd'
 >
 <!-- 2024-05-31
-"Refactor the «Popular RTA Cabinet Styles» home page block as a widget" https://github.com/cabinetsbay/catalog/issues/27 -->
-	<widget class='CabinetsBay\Catalog\Widget\Featured' id='CabinetsBay\Catalog\Widget\Featured'>
+1) "Refactor the «Popular RTA Cabinet Styles» home page block as a widget" https://github.com/cabinetsbay/catalog/issues/27
+2.1) «Element 'widget', attribute 'id': 'CabinetsBay\Catalog\Widget\Featured' is not a valid value of the atomic type 'xs:ID'»:
+https://github.com/cabinetsbay/catalog/issues/30
+2.2) <xs:attribute name="id" type="xs:ID" use="required" />
+https://github.com/magento/magento2/blob/2.4.7/app/code/Magento/Widget/etc/widget.xsd#L36
+2.3) https://www.w3.org/TR/xmlschema-2#ID
+2.4) https://www.w3.org/TR/1999/REC-xml-names-19990114#NT-NCName -->
+	<widget class='CabinetsBay\Catalog\Widget\Featured' id='CabinetsBay.Catalog.Widget.Featured'>
 		<description>It looks like the «Popular RTA Cabinet Styles» block of the home page</description>
 		<label>CabinetsBay — Featured Products</label>
 	</widget>
