@@ -1,5 +1,6 @@
 <?php
 namespace CabinetsBay\Catalog\Widget;
+use CabinetsBay\Catalog\B\Featured as B;
 use Magento\Framework\DataObject\IdentityInterface as IIdentity;
 use Magento\Framework\View\Element\AbstractBlock;
 use Magento\Widget\Block\BlockInterface as IWBlock;
@@ -69,5 +70,7 @@ class Featured
 	 * @see \Magento\Framework\View\Element\AbstractBlock::_toHtml()
 	 * @used-by \Magento\Framework\View\Element\AbstractBlock::_loadCache()
 	 */
-	final protected function _toHtml():string {return df_cc_br($this['cmsBlockId'], $this['categoryIds']);}
+	final protected function _toHtml():string {return B::p(
+		array_slice(df_csv_parse_int($this['categoryIds']), 0, 3), $this['cmsBlockId']
+	);}
 }
