@@ -16,7 +16,7 @@ https://github.com/magento/magento2/blob/2.4.7/app/code/Magento/Widget/etc/widge
 		<label>CabinetsBay — Featured Products</label>
 		<parameters>
 			<parameter name='categoryIds' required='true' visible='true' xsi:type='text'>
-				<label translate='true'>IDs of the categories to show (comma-separated)</label>
+				<label translate='true'><![CDATA[IDs of the categories to show<br/>(comma-separated)]]></label>
 			</parameter>			
 		</parameters>
 	</widget>
