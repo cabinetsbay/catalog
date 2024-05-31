@@ -10,6 +10,7 @@ class Featured implements IIdentity {
 	 * 2024-05-31
 	 * @override
 	 * @see \Magento\Framework\DataObject\IdentityInterface::getIdentities()
+	 * @return string[]
 	 */
-	function getIdentities() {return [];}
+	function getIdentities():array {return [];}
 }
