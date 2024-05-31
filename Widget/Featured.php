@@ -25,6 +25,8 @@ class Featured implements IIdentity, IWBlock {
 	 * 2024-05-31
 	 * @override
 	 * @see \Magento\Widget\Block\BlockInterface::setData()
+	 * @param string|array $k
+	 * @param mixed $v [optional]
 	 */
 	function setData($k, $v = null):self {return $this;}
 }
