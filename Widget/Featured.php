@@ -36,11 +36,20 @@ class Featured
 	 * @override
 	 * @return string[]
 	 * @see \Magento\Framework\DataObject\IdentityInterface::getIdentities()
-	 * @used-by \Magento\Framework\View\Element\AbstractBlock::getCacheTags():
+	 * 1) @used-by \Magento\Framework\View\Element\AbstractBlock::getCacheTags():
 	 * 		if ($this instanceof IdentityInterface) {
 	 * 			$tags = array_merge($tags, $this->getIdentities());
 	 * 		}
 	 * https://github.com/magento/magento2/blob/2.4.7/lib/internal/Magento/Framework/View/Element/AbstractBlock.php#L1090-L1092
+	 * 2) @used-by \Magento\PageCache\Model\Layout\LayoutPlugin::afterGetOutput():
+	 * 		if ($block instanceof IdentityInterface) {
+	 * 			$isEsiBlock = $block->getTtl() > 0;
+	 * 			if ($isVarnish && $isEsiBlock) {
+	 * 				continue;
+	 * 			}
+	 * 			$tags[] = $block->getIdentities();
+	 * 		}
+	 * https://github.com/magento/magento2/blob/2.4.7/app/code/Magento/PageCache/Model/Layout/LayoutPlugin.php#L91-L97
 	 */
 	function getIdentities():array {return [];}
 
