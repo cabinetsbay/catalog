@@ -34,8 +34,13 @@ class Featured
 	/**
 	 * 2024-05-31
 	 * @override
-	 * @see \Magento\Framework\DataObject\IdentityInterface::getIdentities()
 	 * @return string[]
+	 * @see \Magento\Framework\DataObject\IdentityInterface::getIdentities()
+	 * @used-by \Magento\Framework\View\Element\AbstractBlock::getCacheTags():
+	 * 		if ($this instanceof IdentityInterface) {
+	 * 			$tags = array_merge($tags, $this->getIdentities());
+	 * 		}
+	 * https://github.com/magento/magento2/blob/2.4.7/lib/internal/Magento/Framework/View/Element/AbstractBlock.php#L1090-L1092
 	 */
 	function getIdentities():array {return [];}
 
