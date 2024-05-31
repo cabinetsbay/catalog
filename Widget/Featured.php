@@ -2,7 +2,6 @@
 namespace CabinetsBay\Catalog\Widget;
 use Magento\Framework\DataObject\IdentityInterface as IIdentity;
 use Magento\Framework\View\Element\AbstractBlock;
-use Magento\Framework\View\Element\BlockInterface as IBlock;
 use Magento\Widget\Block\BlockInterface as IWBlock;
 # "Refactor the «Popular RTA Cabinet Styles» home page block as a widget" https://github.com/cabinetsbay/catalog/issues/27
 /** @final Unable to use the PHP «final» keyword here because of the M2 code generation. */
