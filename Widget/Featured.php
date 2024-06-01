@@ -71,6 +71,6 @@ class Featured
 	 * @used-by \Magento\Framework\View\Element\AbstractBlock::_loadCache()
 	 */
 	final protected function _toHtml():string {return B::p(
-		array_slice(df_csv_parse_int($this['categoryIds']), 0, 3), $this['text']
+		array_slice(df_csv_parse_int($this['categoryIds']), 0, 3), html_entity_decode($this['text'])
 	);}
 }
