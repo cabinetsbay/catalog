@@ -9,7 +9,7 @@ final class Featured {
 	 * @used-by \CabinetsBay\Catalog\Widget\Featured::_toHtml()
 	 * @param int[] $categoryIds
 	 */
-	static function p(array $categoryIds, string $cmsBlockId):string {return df_block_output(
-		$c = __CLASS__, df_class_llc($c), ['categoryIds' => $categoryIds, 'cmsBlockId' => $cmsBlockId]
+	static function p(array $categoryIds, string $text):string {return df_block_output(
+		$c = __CLASS__, df_class_llc($c), ['categoryIds' => $categoryIds, 'text' => $text]
 	);}
 }
