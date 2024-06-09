@@ -8,7 +8,23 @@ df_assert($l3 = $b->l3()); /** @var C $l3 */
 ?>
 <div class='category-info'>
 	<div class='cb-gallery'>
-		<?php if ($ii = $b->images()) { /** @var array(string => string) $ii */?>
+		<?php
+		/**
+		 * 2024-06-09
+		 * $ii:
+		 * 	{
+		 * 		"3628/swuc_1.jpg": "Croydon White Shaker Ready to Assemble Cabinets",
+		 * 		"3628/swuc_1_1.jpg": "Croydon White Shaker Ready to Assemble Cabinets in Philadelphia",
+		 * 		"3628/swuc_2.jpg": "best Croydon White Shaker Ready to Assemble Cabinets ",
+		 * 		"3628/swuc_2_1.jpg": "Door Sample Croydon White Shaker Ready to Assemble Cabinets",
+		 * 		"3628/swuc_3.jpg": "Croydon White Shaker Ready to Assemble Cabinets for kitchen island",
+		 * 		"3628/swuc_4.jpg": "Croydon White Shaker Ready to Assemble Cabinets for office",
+		 * 		"3628/swuc_5.jpg": "Bathroom Croydon White Shaker Ready to Assemble Cabinets",
+		 * 		"3628/swuc_5_7.jpg": "Bathroom Croydon White Shaker Cabinets"
+		 *	 }
+		 * @var array(string => string) $ii
+		 */
+		if ($ii = $b->images()) { ?>
 			<ul id='category-gallery' class='gallery list-unstyled cS-hidden'>
 				<?=
 					df_cc_n(df_map_k($ii, function(string $f, string $t):string {return
