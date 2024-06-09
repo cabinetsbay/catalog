@@ -22,15 +22,15 @@ class Category extends \Magento\Catalog\Block\Category\View {
 	 * @return array(string => string)
 	 */
 	function images():array {$r = []; /** @var array(string => string)  $r */
-		$path = 'wysiwyg/catalog-carousel-images/'; /** @var string $path */
+		$p = 'wysiwyg/catalog-carousel-images/'; /** @var string $p */
 		if ($c = $this->l3()) { /** @var ?C $c */
-			if (is_dir($d = df_cc_path(getcwd(), DirectoryList::MEDIA, $path . $c->getId()))) {
+			if (is_dir($d = df_cc_path(getcwd(), DirectoryList::MEDIA, $p . $c->getId()))) {
 				$dh = opendir($d);
 				$ff = [];
 				while (false !== ($f = readdir($dh))) {
 					$ff[] = 'wysiwyg/catalog-carousel-images/' . $c->getId() . '/' . $f;
 				}
-				$r = df_mvar_name(df_sort(df_trim_text_left(df_eta(preg_grep('/\.jpg|\.png|\.gif$/i', $ff)), $path)));
+				$r = df_mvar_name(df_sort(df_trim_text_left(df_eta(preg_grep('/\.jpg|\.png|\.gif$/i', $ff)), $p)));
 			}
 		}
 		return $r;
