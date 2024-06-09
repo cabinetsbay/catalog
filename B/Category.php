@@ -24,7 +24,7 @@ class Category extends \Magento\Catalog\Block\Category\View {
 	function images():array {$r = []; /** @var array(string => string)  $r */
 		$path = 'wysiwyg/catalog-carousel-images/'; /** @var string $path */
 		if ($p = $this->l3()) {
-			if (is_dir($d = getcwd() . '/' . DirectoryList::MEDIA . '/' . $path . $p->getId())) {
+			if (is_dir($d = df_cc_path(getcwd(), DirectoryList::MEDIA, $path . $p->getId()))) {
 				$dh = opendir($d);
 				$ff = [];
 				while (false !== ($f = readdir($dh))) {
