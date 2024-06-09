@@ -70,7 +70,7 @@ interface Attribute {
 	/**
 	 * 2024-05-08
 	 * 2024-05-23 https://github.com/cabinetsbay/catalog/labels/matching-products
-	 * @used-by \Sharapov\Cabinetsbay\Block\Category\View::l3p()
+	 * @used-by \CabinetsBay\Catalog\B\Category::l3p()
 	 * @used-by \CabinetsBay\Catalog\Plugin\Category\DataProvider::afterPrepareMeta()
 	 * @used-by \Sharapov\Cabinetsbay\Setup\UpgradeData::p100()
 	 */

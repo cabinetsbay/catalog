@@ -3,7 +3,7 @@
 # "Refactor `app/design/frontend/Cabinetsbay/cabinetsbay_default/Magento_Catalog/templates/category/view.phtml`":
 # https://github.com/cabinetsbay/catalog/issues/18
 use Magento\Catalog\Helper\Category as H;
-use Sharapov\Cabinetsbay\Block\Category\View as B;
+use CabinetsBay\Catalog\B\Category as B;
 /** @var B $block */ $b = $block; /** @var B $b */
 $echo = function(string ...$tt) use($b):void {
 	df_map($tt, function(string $t) use($b):void {
