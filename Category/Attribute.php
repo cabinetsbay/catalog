@@ -67,6 +67,7 @@ interface Attribute {
 	 */
 	const KITCHEN_TYPE = 'cb_kitchen_type';
 
+
 	/**
 	 * 2024-05-08
 	 * 2024-05-23 https://github.com/cabinetsbay/catalog/labels/matching-products
