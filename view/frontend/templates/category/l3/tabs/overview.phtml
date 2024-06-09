@@ -8,7 +8,7 @@ df_assert($l3 = $b->l3()); /** @var C $l3 */
 ?>
 <div class='category-info'>
 	<div class='cb-gallery'>
-		<?php if ($ii = $b->images()) { ?>
+		<?php if ($ii = $b->images()) { /** @var array(string => string) $ii */?>
 			<ul id='category-gallery' class='gallery list-unstyled cS-hidden'>
 				<?=
 					df_cc_n(df_map_k($ii, function(string $f, string $t):string {return
