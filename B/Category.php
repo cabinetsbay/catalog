@@ -30,7 +30,7 @@ class Category extends \Magento\Catalog\Block\Category\View {
 				while (false !== ($f = readdir($dh))) {
 					$ff[] = 'wysiwyg/catalog-carousel-images/' . $c->getId() . '/' . $f;
 				}
-				$r = df_mvar_name(df_sort(df_trim_text_left(df_eta(preg_grep('/\.jpg|\.png|\.gif$/i', $ff)), $p)));
+				$r = df_mvar_name(df_sort_posix(df_trim_text_left(df_eta(preg_grep('/\.jpg|\.png|\.gif$/i', $ff)), $p)));
 			}
 		}
 		return $r;
