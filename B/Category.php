@@ -53,8 +53,18 @@ class Category extends \Magento\Catalog\Block\Category\View {
 	function isRTA():bool {return 3411 === (int)$this->getCurrentCategory()->getId();}
 
 	/**
-	 * 2024-03-10 Dmitrii Fediuk https://upwork.com/fl/mage2pro
-	 * "Refactor the `Sharapov_Cabinetsbay` module": https://github.com/cabinetsbay/site/issues/98
+	 * 2024-03-10
+	 * 1) "Refactor the `Sharapov_Cabinetsbay` module": https://github.com/cabinetsbay/site/issues/98
+	 * 2.1) Level 0: «Root Catalog».
+	 * 2.2) Level 1: «Default Category».
+	 * 2.3) Level 2:
+	 * 		«Ready to Assemble Cabinets»
+	 * 		«Pre-Assembled Cabinets»
+	 * 		«Cabinet Organizers & Hardware»
+	 * 2024-06-10
+	 * 1) "Handle category levels > 3": https://github.com/cabinetsbay/catalog/issues/36
+	 * 2.1) Level 4: https://localhost.com:2255/ready-to-assemble-cabinets/croydon-white-shaker/pantry-oven-cabinets.html
+	 * 2.2) Level 5: https://localhost.com:2255/ready-to-assemble-cabinets/croydon-white-shaker/pantry-oven-cabinets/pantry-cabinets.html
 	 * @see cb_category_is_l2()
 	 * @used-by vendor/cabinetsbay/catalog/view/frontend/templates/category/view.phtml
 	 */
