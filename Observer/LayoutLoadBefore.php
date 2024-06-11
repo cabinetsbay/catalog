@@ -18,14 +18,14 @@ final class LayoutLoadBefore implements ObserverInterface {
 	 */
 	function execute(O $o):void {
 		if (df_is_catalog_product_list()) {
-			df_page_config()->addBodyClass('cb-category-level-' . df_category_level());
-			# 2024-06-10
-			# 1) "Handle category levels > 3": https://github.com/cabinetsbay/catalog/issues/36
-			# 2.1) Level 4: https://localhost.com:2255/ready-to-assemble-cabinets/croydon-white-shaker/pantry-oven-cabinets.html
-			# 2.2) Level 5: https://localhost.com:2255/ready-to-assemble-cabinets/croydon-white-shaker/pantry-oven-cabinets/pantry-cabinets.html
-			if (2 < df_category_level()) {
-				df_page_config()->addBodyClass('cb-category-level-ge3');
-			}
+			df_body_class(
+				'cb-category-level-' . df_category_level()
+				 # 2024-06-10
+				 # "Handle category levels > 3": https://github.com/cabinetsbay/catalog/issues/36
+				 # 1) Level 4: https://localhost.com:2255/ready-to-assemble-cabinets/croydon-white-shaker/pantry-oven-cabinets.html
+				 # 2) Level 5: https://localhost.com:2255/ready-to-assemble-cabinets/croydon-white-shaker/pantry-oven-cabinets/pantry-cabinets.html
+				,3 > df_category_level() ? '' : 'cb-category-level-ge3'
+			);
 		}
 	}
 }
