@@ -1,7 +1,11 @@
 // 2024-04-20
 // 1) "Improve frontend titles": https://github.com/cabinetsbay/site/issues/138
 // 2) "Add the current category level as a CSS class to `<body>`": https://github.com/cabinetsbay/catalog/issues/3
-body.cb-category-level-3 {
+// 2024-06-11
+// 1) "Handle category levels > 3": https://github.com/cabinetsbay/catalog/issues/36
+// 2.1) Level 4: https://localhost.com:2255/ready-to-assemble-cabinets/croydon-white-shaker/pantry-oven-cabinets.html
+// 2.2) Level 5: https://localhost.com:2255/ready-to-assemble-cabinets/croydon-white-shaker/pantry-oven-cabinets/pantry-cabinets.html
+body.cb-category-level-ge3 {
 	// 2024-04-20 "Move `<sub>` out of `<h1>` on the frontend category pages": https://github.com/cabinetsbay/catalog/issues/5
 	sub.cb-title {
 		bottom: initial;
