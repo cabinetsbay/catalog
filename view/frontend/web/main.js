@@ -6,9 +6,9 @@ define(['jquery', 'domReady!'], $ => {
 	const $w = $(window);
 	const $c = $('.products', $('body.page-products'));
 	if ($c.length) {
-		// 2024-06-17 https://api.jquery.com/resize
-		$w.on('resize', () => {
+		const onResize = () => {
 			let a = ['products-list', 'products-grid'];
+			console.log($w.height());
 			// 2024-06-17
 			// 1.1) https://api.jquery.com/height
 			// 1.2) https://stackoverflow.com/a/7789096
@@ -16,6 +16,9 @@ define(['jquery', 'domReady!'], $ => {
 			// 2.2) https://caniuse.com/mdn-javascript_operators_destructuring
 			const [add, remove] = 680 < $w.height() ? a : a.reverse();
 			$c.addClass(add).removeClass(remove);
-		});
+		};
+		// 2024-06-17 https://api.jquery.com/resize
+		$w.on('resize', onResize);
+		onResize();
 	}
 });
