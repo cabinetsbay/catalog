@@ -9,7 +9,7 @@ use Magento\Catalog\Model\ResourceModel\Product\Collection as PC;
 use Magento\Framework\App\Action\Action;
 /** @var B $block */ $b = $block; /** @var B $b */
 $pc = $b->getLoadedProductCollection(); /** @var PC $pc */
-if (! $pc->count()): ?>
+if (!$pc->count()): ?>
 	<div class="message info empty">
 		<div><?= __('We can\'t find products matching the selection.') ?></div>
 	</div>
