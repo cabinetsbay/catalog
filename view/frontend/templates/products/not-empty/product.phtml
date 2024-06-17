@@ -33,11 +33,11 @@ $pos = $b->getPositioned();
 				<?= df_product_att_html($p, $p->getName(), 'name') ?>
 			</a>
 		</strong>
-		<a href="<?= $p->getProductUrl() ?>"
-		   class="product photo product-item-photo"
-		   tabindex="-1">
-			<?= $productImage->toHtml() ?>
-		</a>
+		<a
+			class="product photo product-item-photo"
+			href="<?= $p->getProductUrl() ?>"
+			tabindex="-1"
+		><?= $productImage->toHtml() ?></a>
 		<div class="product details product-item-details">
 			<?php if ($viewMode == 'list') : ?>
 			<div class="product-view-col">
