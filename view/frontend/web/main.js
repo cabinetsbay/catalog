@@ -8,7 +8,7 @@ define(['jquery', 'domReady!'], $ => {
 	if ($c.length) {
 		const onResize = () => {
 			let a = ['products-list', 'products-grid'];
-			//console.log($w.width());
+			console.log($w.width());
 			// 2024-06-17
 			// 1.1) https://api.jquery.com/width
 			// 1.2) https://stackoverflow.com/a/7789096
