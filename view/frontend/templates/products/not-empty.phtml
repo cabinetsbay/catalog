@@ -11,16 +11,9 @@ echo $b->getAdditionalHtml();
 # 2024-06-17
 # "The frontend product list pages should show products as a list on narrow screens and as a grid on wide screens":
 # https://github.com/cabinetsbay/catalog/issues/40
-if (false && $b->getMode() == 'grid') {
-	$viewMode = 'grid';
-	$imageDisplayArea = 'category_page_grid';
-	$templateType = IReviewRenderer::SHORT_VIEW;
-}
-else {
-	$viewMode = 'list';
-	$imageDisplayArea = 'category_page_list';
-	$templateType = IReviewRenderer::FULL_VIEW;
-}
+$viewMode = 'list';
+$imageDisplayArea = 'category_page_list';
+$templateType = IReviewRenderer::FULL_VIEW;
 /**
  * Position for actions regarding image size changing in vde if needed
  */
