@@ -48,7 +48,7 @@ df_assert($l3 = $b->l3()); /** @var C $l3 */
 		else {
 			try {
 				if ($url = $l3->getImageUrl()) {
-					echo df_catalog_output()->categoryAttribute(
+					echo df_category_att_html(
 						$l3
 						,df_tag('div', 'category-image', df_tag('img', [
 							'alt' => $l3->getName()
@@ -66,7 +66,7 @@ df_assert($l3 = $b->l3()); /** @var C $l3 */
 	<div class="cb-text">
 		<?php if ($_description = $l3->getDescription()): ?>
 			<div class="category-description">
-				<?= df_catalog_output()->categoryAttribute($l3, $_description, 'description') ?>
+				<?= df_category_att_html($l3, $_description, 'description') ?>
 			</div>
 		<?php endif; ?>
 		<div class="category-subdescription">
