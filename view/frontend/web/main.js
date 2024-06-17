@@ -10,7 +10,7 @@ define(['jquery', 'domReady!'], $ => {
 	const $c = $('div.products', $('body.page-products'));
 	if ($c.length) {
 		const onResize = () => {
-			let a = ['products-list', 'products-grid'];
+			let a = ['products-grid', 'products-list'];
 			// 2024-06-17
 			// 1.1) https://api.jquery.com/width
 			// 1.2) https://stackoverflow.com/a/7789096
