@@ -41,7 +41,7 @@ $pos = $b->getPositioned();
 		><?= $productImage->toHtml() ?></a>
 		<div class="product details product-item-details">
 			<?php if ($viewMode == 'list') : ?>
-			<div class="product-view-col">
+				<div class="product-view-col">
 			<?php endif; ?>
 			<?php $pNameStripped = $b->stripTags($p->getName(), null, true); ?>
 			<strong class="product name product-item-name">
