@@ -68,7 +68,6 @@ $pos = $b->getPositioned();
 					<?php endif; ?>
 					<?= $b->getProductPrice($p) ?>
 					<?= $b->getProductDetailsHtml($p) ?>
-
 					<div class="product-item-inner">
 						<div class="product actions product-item-actions"<?= strpos($pos,
 							$viewMode . '-actions') ? $position
@@ -118,8 +117,7 @@ $pos = $b->getPositioned();
 										</div>
 									<?php else: ?>
 										<div class="stock unavailable">
-											<span><?=
-												__('Out of stock') ?></span>
+											<span><?= __('Out of stock') ?></span>
 										</div>
 									<?php endif; ?>
 								<?php endif; ?>
