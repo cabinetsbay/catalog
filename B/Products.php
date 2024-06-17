@@ -46,5 +46,5 @@ class Products extends \Magento\Catalog\Block\Product\ListProduct {
 	 * @used-by \Magento\Framework\View\Element\Template::getCacheKeyInfo()
 	 * @used-by \Magento\Framework\View\Element\Template::getTemplateFile()
 	 */
-	function getTemplate():string {return 'CabinetsBay_Catalog::products.phtml';}
+	function getTemplate():string {return cb_category_is_l2() ? '' : 'CabinetsBay_Catalog::products.phtml';}
 }

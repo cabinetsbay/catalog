@@ -12,6 +12,7 @@ use Magento\Catalog\Model\Category as C;
  * 1) "Handle category levels > 3": https://github.com/cabinetsbay/catalog/issues/36
  * 2.1) Level 4: https://localhost.com:2255/ready-to-assemble-cabinets/croydon-white-shaker/pantry-oven-cabinets.html
  * 2.2) Level 5: https://localhost.com:2255/ready-to-assemble-cabinets/croydon-white-shaker/pantry-oven-cabinets/pantry-cabinets.html
+ * @used-by \CabinetsBay\Catalog\B\Products::getTemplate() (https://github.com/cabinetsbay/site/issues/98)
  * @used-by vendor/cabinetsbay/catalog/view/frontend/templates/category/header.phtml
  */
 function cb_category_is_l2(?C $c = null):bool {return 2 === df_category_level($c);}
