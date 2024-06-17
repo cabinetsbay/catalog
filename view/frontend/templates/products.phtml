@@ -3,9 +3,10 @@
 # "Refactor `vendor/cabinetsbay/catalog/view/frontend/templates/products.phtml`":
 # https://github.com/cabinetsbay/catalog/issues/38
 # 2024-06-17 "Move the catalog-related code to the `CabinetsBay_Catalog` module": https://github.com/cabinetsbay/catalog/issues/2
-use Magento\Framework\App\Action\Action;
 use CabinetsBay\Catalog\B\Products as B;
+use Magento\Catalog\Block\Product\ReviewRendererInterface as IReviewRenderer;
 use Magento\Catalog\Helper\Output as H;
+use Magento\Framework\App\Action\Action;
 /** @var B $block */ $b = $block; /** @var B $b */
 $_productCollection = $b->getLoadedProductCollection();
 // Show products list only on 3rd category level
@@ -22,12 +23,12 @@ if ($b->level() >= 3) :
 		if ($b->getMode() == 'grid') {
 			$viewMode = 'grid';
 			$imageDisplayArea = 'category_page_grid';
-			$templateType = \Magento\Catalog\Block\Product\ReviewRendererInterface::SHORT_VIEW;
+			$templateType = IReviewRenderer::SHORT_VIEW;
 		}
 		else {
 			$viewMode = 'list';
 			$imageDisplayArea = 'category_page_list';
-			$templateType = \Magento\Catalog\Block\Product\ReviewRendererInterface::FULL_VIEW;
+			$templateType = IReviewRenderer::FULL_VIEW;
 		}
 		/**
 		 * Position for actions regarding image size changing in vde if needed
