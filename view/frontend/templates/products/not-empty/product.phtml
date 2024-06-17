@@ -45,10 +45,10 @@ $pos = $b->getPositioned();
 			<?php endif; ?>
 			<?php $pNameStripped = $b->stripTags($p->getName(), null, true); ?>
 			<strong class="product name product-item-name">
-				<a class="product-item-link"
-				   href="<?= $p->getProductUrl() ?>">
-					<?= df_product_att_html($p, $p->getName(), 'name') ?>
-				</a>
+				<a
+					class="product-item-link"
+					href="<?= $p->getProductUrl() ?>"
+				><?= df_product_att_html($p, $p->getName(), 'name') ?></a>
 			</strong>
 			<?= $b->getReviewsSummaryHtml($p, $templateType) ?>
 			<?php //if ($showDescription): ?>
