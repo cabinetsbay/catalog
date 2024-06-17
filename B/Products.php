@@ -47,9 +47,7 @@ class Products extends \Magento\Catalog\Block\Product\ListProduct {
 	}
   }
 
-  function getCurrentCategory() {
-	return $this->getLayer()->getCurrentCategory();
-  }
+	function getCurrentCategory() {return $this->getLayer()->getCurrentCategory();}
 
 	/**
 	 * 2024-03-10 Dmitrii Fediuk https://upwork.com/fl/mage2pro
