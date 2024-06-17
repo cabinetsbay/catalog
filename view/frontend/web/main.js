@@ -8,7 +8,6 @@ define(['jquery', 'domReady!'], $ => {
 	if ($c.length) {
 		const onResize = () => {
 			let a = ['products-list', 'products-grid'];
-			console.log($w.width());
 			// 2024-06-17
 			// 1.1) https://api.jquery.com/width
 			// 1.2) https://stackoverflow.com/a/7789096
@@ -17,9 +16,7 @@ define(['jquery', 'domReady!'], $ => {
 			const [add, remove] = 680 < $w.width() ? a : a.reverse();
 			$c.addClass(add).removeClass(remove);
 		};
-		// 2024-06-17
-		// 1) https://api.jquery.com/resize
-		// 2) https://stackoverflow.com/a/29809396
+		// 2024-06-17 https://api.jquery.com/resize
 		$w.on('resize', onResize);
 		onResize();
 	}
