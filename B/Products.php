@@ -56,6 +56,16 @@ class Products extends \Magento\Catalog\Block\Product\ListProduct {
 	 */
 	function level():int {return df_category_level($this->getCurrentCategory());}
 
+	/**
+	 * @override
+	 * @see \Magento\Framework\View\Element\Template::getTemplate()
+	 * @used-by \Magento\Framework\View\Element\Template::_toHtml()
+	 * @used-by \Magento\Framework\View\Element\Template::fetchView()
+	 * @used-by \Magento\Framework\View\Element\Template::getCacheKeyInfo()
+	 * @used-by \Magento\Framework\View\Element\Template::getTemplateFile()
+	 */
+	function getTemplate():string {return 'CabinetsBay_Catalog::products.phtml';}
+
   function isMobile() {
 	return $this->_mobileDetector->isMobile() || $this->_mobileDetector->isTablet();
   }
