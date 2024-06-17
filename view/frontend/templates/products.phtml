@@ -5,9 +5,10 @@
 # 2024-06-17 "Move the catalog-related code to the `CabinetsBay_Catalog` module": https://github.com/cabinetsbay/catalog/issues/2
 use CabinetsBay\Catalog\B\Products as B;
 use Magento\Catalog\Block\Product\ReviewRendererInterface as IReviewRenderer;
+use Magento\Catalog\Model\ResourceModel\Product\Collection as PC;
 use Magento\Framework\App\Action\Action;
 /** @var B $block */ $b = $block; /** @var B $b */
-$_productCollection = $b->getLoadedProductCollection();
+$_productCollection = $b->getLoadedProductCollection(); /** @var PC $_productCollection */
 if (! $_productCollection->count()): ?>
 	<div class="message info empty">
 		<div><?= __('We can\'t find products matching the selection.') ?></div>
