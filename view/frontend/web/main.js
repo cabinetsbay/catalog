@@ -17,8 +17,10 @@ define(['jquery', 'domReady!'], $ => {
 			const [add, remove] = 680 < $w.height() ? a : a.reverse();
 			$c.addClass(add).removeClass(remove);
 		};
-		// 2024-06-17 https://api.jquery.com/resize
-		$w.on('resize', onResize);
+		// 2024-06-17
+		// 1) https://api.jquery.com/resize
+		// 2) https://stackoverflow.com/a/29809396
+		$w.on('resize', setTimeout(onResize, 100));
 		onResize();
 	}
 });
