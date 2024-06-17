@@ -32,7 +32,7 @@ $viewMode = 'list';
 			echo df_block_output('CabinetsBay_Catalog', 'products/not-empty/ol', ['b' => $b]);
 		?>
 </div>
-<php
+<?php
 	echo $b->getChildBlock('toolbar')->setIsBottom(true)->toHtml();
 	if (!$b->isRedirectToCartEnabled()) {
 		$lastProduct = df_last($b->getLoadedProductCollection()); /** @var P $lastProduct */
