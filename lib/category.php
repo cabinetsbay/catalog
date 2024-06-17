@@ -14,4 +14,4 @@ use Magento\Catalog\Model\Category as C;
  * 2.2) Level 5: https://localhost.com:2255/ready-to-assemble-cabinets/croydon-white-shaker/pantry-oven-cabinets/pantry-cabinets.html
  * @used-by vendor/cabinetsbay/catalog/view/frontend/templates/category/header.phtml
  */
-function cb_category_is_l2(C $c):bool {return 2 === df_category_level($c);}
+function cb_category_is_l2(?C $c = null):bool {return 2 === df_category_level($c);}
