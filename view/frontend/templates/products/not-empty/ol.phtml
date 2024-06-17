@@ -5,10 +5,6 @@
 use CabinetsBay\Catalog\B\Products as B;
 use Magento\Catalog\Model\Product as P;
 /** @var B $b */
-?>
-<ol class="products list items product-items">
-	<?php
-	foreach ($b->getLoadedProductCollection() as $p) { /** @var P $p */
-		echo df_block_output('CabinetsBay_Catalog', 'products/not-empty/ol/product', ['b' => $b, 'p' => $p]);
-	} ?>
-</ol>
+echo df_tag('ol', 'products list items product-items', df_cc_n(df_map(function(P $p) use($b):string {return df_block_output(
+	'CabinetsBay_Catalog', 'products/not-empty/ol/product', ['b' => $b, 'p' => $p]
+);}, $b->getLoadedProductCollection())));
