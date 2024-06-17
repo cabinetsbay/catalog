@@ -5,18 +5,10 @@ use Magento\Catalog\Block\Product\Context;
 use Magento\Catalog\Model\Layer\Resolver;
 use Magento\Framework\Data\Helper\PostHelper;
 use Magento\Framework\Url\Helper\Data;
-use WeltPixel\MobileDetect\Library\MobileDetect;
 # 2024-06-17
 # 1) "Move the catalog-related code to the `CabinetsBay_Catalog` module": https://github.com/cabinetsbay/catalog/issues/2
 # 2) "Refactor the `Sharapov_Cabinetsbay` module": https://github.com/cabinetsbay/site/issues/98
 class Products extends \Magento\Catalog\Block\Product\ListProduct {
-
-  /**
-   * Mobile Detector
-   * @var MobileDetect
-   */
-  protected $_mobileDetector;
-
   /**
    * @param Context $context
    * @param PostHelper $postDataHelper
@@ -33,7 +25,6 @@ class Products extends \Magento\Catalog\Block\Product\ListProduct {
 	Data $urlHelper,
 	array $data = []
   ) {
-	$this->_mobileDetector = new MobileDetect();
 	parent::__construct(
 	  $context,
 	  $postDataHelper,
@@ -66,22 +57,4 @@ class Products extends \Magento\Catalog\Block\Product\ListProduct {
 	 * @used-by \Magento\Framework\View\Element\Template::getTemplateFile()
 	 */
 	function getTemplate():string {return 'CabinetsBay_Catalog::products.phtml';}
-
-  function isMobile() {
-	return $this->_mobileDetector->isMobile() || $this->_mobileDetector->isTablet();
-  }
-
-  /**
-   * Retrieve current view mode
-   * @return string
-   */
-  function getMode() {
-	if($this->isMobile()) {
-
-	  // Force grid view on mobile
-	  return 'grid';
-	}
-
-	return parent::getMode();
-  }
 }
