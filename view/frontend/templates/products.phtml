@@ -82,9 +82,7 @@ if ($b->level() >= 3) :
 								<a class="product-item-link"
 								   href="<?= 
 								   $_product->getProductUrl() ?>">
-									<?= 
-									$_helper->productAttribute($_product,
-										$_product->getName(), 'name') ?>
+									<?= df_product_att_html($_product, $_product->getName(), 'name') ?>
 								</a>
 							</strong>
 							<?php // Product Image ?>
