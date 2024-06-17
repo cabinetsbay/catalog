@@ -1,0 +1,45 @@
+// 2024-06-17
+// 1) "Refactor `app/design/frontend/Cabinetsbay/cabinetsbay_default/web/css/source/_extend.less`":
+// https://github.com/cabinetsbay/site/issues/119
+// 2) "The frontend product list pages should show products as a grid on narrow screens and as a list on wide screens":
+// https://github.com/cabinetsbay/catalog/issues/39
+.products-list {
+	.product-item-name-second {
+		display: none;
+	}
+	.actions-primary {
+		text-align: left;
+	}
+	.product-item-name {
+		text-align: left;
+	}
+	.product-item-photo {
+		padding: 0 2em 0 0;
+	}
+	.product-item-details {
+		text-align: left;
+	}
+	.product-view-col {
+		display: table-cell;
+		vertical-align: top;
+		&:last-of-type {
+			width: 15%;
+			padding: 2em;
+			height: 100%;
+			border-left: 1px solid #e8f5f6;
+			position: relative;
+		}
+		> .price-box {
+			border: 0;
+			margin: 1.52em 0 2.5em;
+			padding-top: 0;
+			width: 150px;
+		}
+	}
+	.product-image-container {
+		width: 170px !important;
+	}
+	.product-item-description {
+		font-size: 1.3em;
+	}
+}

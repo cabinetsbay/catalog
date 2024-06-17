@@ -2,55 +2,8 @@
 // 1) "Transfer the catalog-related code to the `CabinetsBay_Catalog` module": https://github.com/cabinetsbay/catalog/issues/2
 // 2) "Refactor `app/design/frontend/Cabinetsbay/cabinetsbay_default/web/css/source/_extend.less`":
 // https://github.com/cabinetsbay/site/issues/119
-.products-grid {
-	.product-item-name {
-		text-align: center;
-		margin: .4em;
-		height: 5.8em;
-		overflow: hidden;
-	}
-	.product-item {
-		@media screen and (max-width: 680px) {
-			width: 100%;
-			margin: 0 0 .5em;
-			padding-bottom: .6em;
-		}
-		.product-item-inner {
-			margin: 0;
-		}
-		.product-item-info {
-			text-align: center;
-		}
-		.product-item-details {
-			.product-item-name {
-				display: none;
-			}
-		}
-		.product-item-actions {
-			position: relative;
-			.input-text.qty {
-				position: absolute;
-				top: 0;
-				padding: 0;
-				border-radius: 0;
-				width: 3em;
-				left: 1em;
-				right: auto;
-				text-align: center;
-			}
-		}
-		.price-box {
-			margin: 0 1em;
-			text-align: center;
-		}
-	}
-	.product-item-description {
-		margin: 0 1em 1em;
-		text-align: center;
-		height: 4.2em;
-		overflow: hidden;
-	}
-}
+@import 'products/_grid.less';
+@import 'products/_list.less';
 .product-item {
 	border: 1px solid #7ea9b2;
 	padding: 1em;
@@ -58,46 +11,6 @@
 }
 .product-item-info {
 	width: 100% !important;
-}
-.products-list {
-	.product-item-name-second {
-		display: none;
-	}
-	.actions-primary {
-		text-align: left;
-	}
-	.product-item-name {
-		text-align: left;
-	}
-	.product-item-photo {
-		padding: 0 2em 0 0;
-	}
-	.product-item-details {
-		text-align: left;
-	}
-	.product-view-col {
-		display: table-cell;
-		vertical-align: top;
-		&:last-of-type {
-			width: 15%;
-			padding: 2em;
-			height: 100%;
-			border-left: 1px solid #e8f5f6;
-			position: relative;
-		}
-		> .price-box {
-			border: 0;
-			margin: 1.52em 0 2.5em;
-			padding-top: 0;
-			width: 150px;
-		}
-	}
-	.product-image-container {
-		width: 170px !important;
-	}
-	.product-item-description {
-		font-size: 1.3em;
-	}
 }
 .page-products {
 	.price-box {
