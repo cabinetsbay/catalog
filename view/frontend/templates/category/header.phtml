@@ -2,10 +2,8 @@
 # 2024-03-10
 # "Refactor `app/design/frontend/Cabinetsbay/cabinetsbay_default/Magento_Catalog/templates/category/header.phtml`":
 # https://github.com/cabinetsbay/catalog/issues/22
-use Magento\Catalog\Model\Category as C;
 use CabinetsBay\Catalog\B\Category as B;
 /** @var B $block */ $b = $block; /** @var B $b */
-$c = $b->getCurrentCategory(); /** @var C $c */
 # 2024-03-10
 # 2.1) Level 0: «Root Catalog».
 # 2.2) Level 1: «Default Category».
@@ -15,7 +13,7 @@ $c = $b->getCurrentCategory(); /** @var C $c */
 # 		«Cabinet Organizers & Hardware»
 # 2.4) Level 3: «Steam White Shaker».
 if (cb_category_is_l2()) {
-	?><h1 class="page-title"><?= $c->getName(); ?></h1><?php
+	?><h1 class="page-title"><?= df_category_current()->getName(); ?></h1><?php
 }
 else {
 	# 2024-03-11
