@@ -1,6 +1,8 @@
 // 2024-06-17
-// "The frontend product list pages should show products as a grid on narrow screens and as a list on wide screens":
+// 1) "The frontend product list pages should show products as a grid on narrow screens and as a list on wide screens":
 // https://github.com/cabinetsbay/catalog/issues/39
+// 2) "The frontend product list pages should show products as a list on narrow screens and as a grid on wide screens":
+// https://github.com/cabinetsbay/catalog/issues/40
 // @used-by https://github.com/cabinetsbay/core/blob/0.3.5/view/frontend/templates/head.phtml#L35
 define(['jquery', 'domReady!'], $ => {
 	const $w = $(window);
