@@ -63,12 +63,10 @@ $pos = $b->getPositioned();
 							class="action more"><?= __('Learn More') ?></a>
 					</div>
 					<?php //endif; ?>
-
 					<?php if ($viewMode == 'list') : ?>
 						</div><div class="product-view-col">
 					<?php endif; ?>
-					<?=
-					$b->getProductPrice($p) ?>
+					<?= $b->getProductPrice($p) ?>
 					<?= $b->getProductDetailsHtml($p) ?>
 
 					<div class="product-item-inner">
