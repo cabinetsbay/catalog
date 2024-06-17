@@ -32,8 +32,9 @@ $viewMode = 'list';
 			echo df_block_output('CabinetsBay_Catalog', 'products/not-empty/ol', ['b' => $b]);
 		?>
 </div>
-<?= $b->getChildBlock('toolbar')->setIsBottom(true)->toHtml() ?>
-<?php if (!$b->isRedirectToCartEnabled()) {
-	$lastProduct = df_last($b->getLoadedProductCollection()); /** @var P $lastProduct */
-	echo df_js_x('[data-role=tocart-form], .form.map.checkout', '', 'catalogAddToCart', ['product_sku' => $lastProduct->getSku()]);
-}
+<php
+	echo $b->getChildBlock('toolbar')->setIsBottom(true)->toHtml();
+	if (!$b->isRedirectToCartEnabled()) {
+		$lastProduct = df_last($b->getLoadedProductCollection()); /** @var P $lastProduct */
+		echo df_js_x('[data-role=tocart-form], .form.map.checkout', '', 'catalogAddToCart', ['product_sku' => $lastProduct->getSku()]);
+	}
