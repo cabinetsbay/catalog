@@ -55,7 +55,7 @@ class Products extends \Magento\Catalog\Block\Product\ListProduct {
 	 * 2024-03-10 Dmitrii Fediuk https://upwork.com/fl/mage2pro
 	 * "Refactor the `Sharapov_Cabinetsbay` module": https://github.com/cabinetsbay/site/issues/98
 	 * @see \CabinetsBay\Catalog\B\Category::level()
-	 * @used-by app/design/frontend/Cabinetsbay/cabinetsbay_default/Magento_Catalog/templates/product/list.phtml
+	 * @used-by vendor/cabinetsbay/catalog/view/frontend/templates/products.phtml
 	 */
 	function level():int {return df_category_level($this->getCurrentCategory());}
 
