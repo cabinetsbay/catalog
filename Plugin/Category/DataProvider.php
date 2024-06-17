@@ -1,7 +1,7 @@
 <?php
 # 2024-05-19
 # 1) "Refactor the `Sharapov_Cabinetsbay` module": https://github.com/cabinetsbay/site/issues/98
-# 2) "Transfer the catalog-related code to the `CabinetsBay_Catalog` module": https://github.com/cabinetsbay/catalog/issues/2
+# 2) "Move the catalog-related code to the `CabinetsBay_Catalog` module": https://github.com/cabinetsbay/catalog/issues/2
 namespace CabinetsBay\Catalog\Plugin\Category;
 use CabinetsBay\Catalog\Category\Attribute as A;
 use Magento\Catalog\Model\Category\DataProvider as Sb;
