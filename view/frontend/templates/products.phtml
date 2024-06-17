@@ -5,15 +5,15 @@
 # 2024-06-17 "Move the catalog-related code to the `CabinetsBay_Catalog` module": https://github.com/cabinetsbay/catalog/issues/2
 use Magento\Framework\App\Action\Action;
 use CabinetsBay\Catalog\B\Products as B;
+use Magento\Catalog\Helper\Output as H;
 /** @var B $block */ $b = $block; /** @var B $b */
 $_productCollection = $b->getLoadedProductCollection();
 // Show products list only on 3rd category level
 if ($b->level() >= 3) :
-	$_helper = $this->helper('Magento\Catalog\Helper\Output');
+	$_helper = $this->helper('Magento\Catalog\Helper\Output'); /** @var H $_helper */
 	if (! $_productCollection->count()): ?>
 		<div class="message info empty">
-			<div><?= 
-				__('We can\'t find products matching the selection.') ?></div>
+			<div><?= __('We can\'t find products matching the selection.') ?></div>
 		</div>
 	<?php else: ?>
 		<?= $b->getToolbarHtml() ?>
