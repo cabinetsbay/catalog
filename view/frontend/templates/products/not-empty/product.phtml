@@ -77,8 +77,7 @@ $pos = $b->getPositioned();
 								= $b->getAddToCartPostParams($p); ?>
 							<form data-role="tocart-form"
 								  data-product-sku="<?= $b->escapeHtml($p->getSku()) ?>"
-								  action="<?= /* @NoEscape */
-								  $postParams['action'] ?>"
+								  action="<?= $postParams['action'] ?>"
 								  method="post">
 								<input type="hidden"
 									   name="product"
