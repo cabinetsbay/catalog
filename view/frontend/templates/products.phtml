@@ -9,7 +9,7 @@ use Magento\Framework\App\Action\Action;
 /** @var B $block */ $b = $block; /** @var B $b */
 $_productCollection = $b->getLoadedProductCollection();
 // Show products list only on 3rd category level
-if (df_category_level($b->getCurrentCategory()) >= 3) {
+if (df_category_level() >= 3) {
 	if (! $_productCollection->count()): ?>
 		<div class="message info empty">
 			<div><?= __('We can\'t find products matching the selection.') ?></div>
@@ -51,8 +51,8 @@ if (df_category_level($b->getCurrentCategory()) >= 3) {
 				 * 2.1) Level 4: https://localhost.com:2255/ready-to-assemble-cabinets/croydon-white-shaker/pantry-oven-cabinets.html
 				 * 2.2) Level 5: https://localhost.com:2255/ready-to-assemble-cabinets/croydon-white-shaker/pantry-oven-cabinets/pantry-cabinets.html
 				 */
-				if (df_category_level($b->getCurrentCategory()) > 3) { ?>
-					<h3><?=$b->getCurrentCategory()->getName(); ?></h3>
+				if (df_category_level() > 3) { ?>
+					<h3><?= df_category_current()->getName(); ?></h3>
 				<?php } ?>
 			<ol class="products list items product-items">
 				<?php /** @var $_product \Magento\Catalog\Model\Product */ ?>

@@ -38,8 +38,6 @@ class Products extends \Magento\Catalog\Block\Product\ListProduct {
 	}
   }
 
-	function getCurrentCategory() {return $this->getLayer()->getCurrentCategory();}
-
 	/**
 	 * @override
 	 * @see \Magento\Framework\View\Element\Template::getTemplate()
