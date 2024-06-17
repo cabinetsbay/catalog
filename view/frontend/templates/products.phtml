@@ -20,7 +20,10 @@ if ($b->level() >= 3) :
 		<?= $b->getToolbarHtml() ?>
 		<?= $b->getAdditionalHtml() ?>
 		<?php
-		if ($b->getMode() == 'grid') {
+		# 2024-06-17
+		# "The frontend product list pages should show products as a list on narrow screens and as a grid on wide screens":
+		# https://github.com/cabinetsbay/catalog/issues/40
+		if (false && $b->getMode() == 'grid') {
 			$viewMode = 'grid';
 			$imageDisplayArea = 'category_page_grid';
 			$templateType = IReviewRenderer::SHORT_VIEW;
