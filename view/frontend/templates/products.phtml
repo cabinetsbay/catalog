@@ -8,8 +8,7 @@ use Magento\Catalog\Block\Product\ReviewRendererInterface as IReviewRenderer;
 use Magento\Framework\App\Action\Action;
 /** @var B $block */ $b = $block; /** @var B $b */
 $_productCollection = $b->getLoadedProductCollection();
-$level = df_category_level(); /** @var int $level */
-if (2 < $level) {
+if (2 < ($level = df_category_level())) { /** @var int $level */
 	if (! $_productCollection->count()): ?>
 		<div class="message info empty">
 			<div><?= __('We can\'t find products matching the selection.') ?></div>
