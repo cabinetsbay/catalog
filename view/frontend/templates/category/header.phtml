@@ -14,7 +14,7 @@ $c = $b->getCurrentCategory(); /** @var C $c */
 # 		«Pre-Assembled Cabinets»
 # 		«Cabinet Organizers & Hardware»
 # 2.4) Level 3: «Steam White Shaker».
-if (cb_category_is_l2($c)) {
+if (cb_category_is_l2()) {
 	?><h1 class="page-title"><?= $c->getName(); ?></h1><?php
 }
 else {
