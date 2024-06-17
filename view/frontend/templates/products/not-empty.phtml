@@ -4,6 +4,7 @@
 # https://github.com/cabinetsbay/catalog/issues/38
 use CabinetsBay\Catalog\B\Products as B;
 use Magento\Catalog\Block\Product\ReviewRendererInterface as IReviewRenderer;
+use Magento\Catalog\Model\Product as P;
 use Magento\Framework\App\Action\Action;
 /** @var B $b */
 echo $b->getToolbarHtml() . $b->getAdditionalHtml();
@@ -34,8 +35,8 @@ $pos = $b->getPositioned();
 			<h3><?= df_category_current()->getName(); ?></h3>
 		<?php } ?>
 	<ol class="products list items product-items">
-		<?php /** @var $_product \Magento\Catalog\Model\Product */ ?>
-		<?php foreach ($b->getLoadedProductCollection() as $_product): ?>
+		<?php /** @var P $_product */
+		foreach ($b->getLoadedProductCollection() as $_product): ?>
 			<li class="item product product-item">
 				<div class="product-item-info"
 					 data-container="product-<?=
