@@ -11,7 +11,6 @@ use Magento\Framework\App\Action\Action;
 $_productCollection = $b->getLoadedProductCollection();
 // Show products list only on 3rd category level
 if ($b->level() >= 3) :
-	$_helper = $this->helper('Magento\Catalog\Helper\Output'); /** @var H $_helper */
 	if (! $_productCollection->count()): ?>
 		<div class="message info empty">
 			<div><?= __('We can\'t find products matching the selection.') ?></div>
