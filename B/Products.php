@@ -41,14 +41,6 @@ class Products extends \Magento\Catalog\Block\Product\ListProduct {
 	function getCurrentCategory() {return $this->getLayer()->getCurrentCategory();}
 
 	/**
-	 * 2024-03-10 Dmitrii Fediuk https://upwork.com/fl/mage2pro
-	 * "Refactor the `Sharapov_Cabinetsbay` module": https://github.com/cabinetsbay/site/issues/98
-	 * @see \CabinetsBay\Catalog\B\Category::level()
-	 * @used-by vendor/cabinetsbay/catalog/view/frontend/templates/products.phtml
-	 */
-	function level():int {return df_category_level($this->getCurrentCategory());}
-
-	/**
 	 * @override
 	 * @see \Magento\Framework\View\Element\Template::getTemplate()
 	 * @used-by \Magento\Framework\View\Element\Template::_toHtml()
