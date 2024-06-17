@@ -22,15 +22,12 @@ if ($b->level() >= 3) :
 		if ($b->getMode() == 'grid') {
 			$viewMode = 'grid';
 			$imageDisplayArea = 'category_page_grid';
-			//$showDescription = false;
-			$templateType
-				= \Magento\Catalog\Block\Product\ReviewRendererInterface::SHORT_VIEW;
-		} else {
+			$templateType = \Magento\Catalog\Block\Product\ReviewRendererInterface::SHORT_VIEW;
+		}
+		else {
 			$viewMode = 'list';
 			$imageDisplayArea = 'category_page_list';
-			//$showDescription = true;
-			$templateType
-				= \Magento\Catalog\Block\Product\ReviewRendererInterface::FULL_VIEW;
+			$templateType = \Magento\Catalog\Block\Product\ReviewRendererInterface::FULL_VIEW;
 		}
 		/**
 		 * Position for actions regarding image size changing in vde if needed
