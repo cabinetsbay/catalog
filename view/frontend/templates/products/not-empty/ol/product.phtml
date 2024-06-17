@@ -1,0 +1,119 @@
+<?php
+# 2024-06-17
+# "Refactor `vendor/cabinetsbay/catalog/view/frontend/templates/products.phtml`":
+# https://github.com/cabinetsbay/catalog/issues/38
+use CabinetsBay\Catalog\B\Products as B;
+use Magento\Catalog\Model\Product as P;
+use Magento\Framework\App\Action\Action;
+/** @var B $b */ /** @var P $p */
+?>
+<li class="item product product-item">
+	<div class="product-item-info" data-container="product-<?= $viewMode ?>">
+		<?php
+		$productImage = $b->getImage($p, $imageDisplayArea);
+		if ($pos != null) {
+			$position = ' style="left:'
+				. $productImage->getWidth() . 'px;'
+				. 'top:' . $productImage->getHeight()
+				. 'px;"';
+		}
+		?>
+		<?php $pNameStripped = $b->stripTags($p->getName(), null, true); ?>
+		<strong class="product name product-item-name product-item-name-second">
+			<a class="product-item-link"
+			   href="<?= $p->getProductUrl() ?>">
+				<?= df_product_att_html($p, $p->getName(), 'name') ?>
+			</a>
+		</strong>
+		<?php // Product Image ?>
+		<a href="<?= $p->getProductUrl() ?>"
+		   class="product photo product-item-photo"
+		   tabindex="-1">
+			<?= $productImage->toHtml() ?>
+		</a>
+		<div class="product details product-item-details">
+			<?php if ($viewMode == 'list') : ?>
+			<div class="product-view-col">
+			<?php endif; ?>
+			<?php $pNameStripped = $b->stripTags($p->getName(), null, true); ?>
+			<strong class="product name product-item-name">
+				<a class="product-item-link"
+				   href="<?= $p->getProductUrl() ?>">
+					<?= df_product_att_html($p, $p->getName(), 'name') ?>
+				</a>
+			</strong>
+			<?= $b->getReviewsSummaryHtml($p, $templateType) ?>
+			<?php //if ($showDescription): ?>
+			<div class="product description product-item-description">
+				<?= df_product_att_html($p, $p->getShortDescription(), 'short_description') ?>
+				<a
+					href="<?= $p->getProductUrl() ?>"
+					title="<?= $pNameStripped ?>"
+					class="action more"><?= __('Learn More') ?></a>
+			</div>
+			<?php //endif; ?>
+			<?php if ($viewMode == 'list') : ?>
+				</div><div class="product-view-col">
+			<?php endif; ?>
+			<?= $b->getProductPrice($p) ?>
+			<?= $b->getProductDetailsHtml($p) ?>
+			<div class="product-item-inner">
+				<div class="product actions product-item-actions"<?= strpos($pos,
+					$viewMode . '-actions') ? $position
+					: '' ?>>
+					<div class="actions-primary"<?= strpos($pos,
+						$viewMode . '-primary') ? $position
+						: '' ?>>
+						<?php if ($p->isSaleable()): ?>
+							<?php $postParams
+								= $b->getAddToCartPostParams($p); ?>
+							<form data-role="tocart-form"
+								  data-product-sku="<?= $b->escapeHtml($p->getSku()) ?>"
+								  action="<?= /* @NoEscape */
+								  $postParams['action'] ?>"
+								  method="post">
+								<input type="hidden"
+									   name="product"
+									   value="<?=
+									   $postParams['data']['product'] ?>">
+								<input type="hidden"
+									   name="<?=
+									   Action::PARAM_NAME_URL_ENCODED ?>"
+									   value="<?=
+									   $postParams['data'][Action::PARAM_NAME_URL_ENCODED] ?>">
+								<?= $b->getBlockHtml('formkey') ?>
+								<?php $qty = ($b->getProductDefaultQty() == 0) ? 1 :
+								 $b->getProductDefaultQty(); ?>
+								<input type="number"
+									   name="qty"
+									   maxlength="4"
+									   value="<?php  echo $qty ?>"
+									   title="<?php  echo __('Qty') ?>" class="input-text qty form-control"
+									   data-validate="<?php echo $b->escapeHtml(json_encode($b->getQuantityValidators())) ?>"
+								/>
+								<button type="submit"
+										title="<?= $b->escapeHtml(__('Add to Cart')) ?>"
+										class="action tocart primary">
+									<span><?= __('Add to Cart') ?></span>
+								</button>
+							</form>
+						<?php else: ?>
+							<?php if ($p->isAvailable()): ?>
+								<div class="stock available">
+									<span><?= __('In stock') ?></span>
+								</div>
+							<?php else: ?>
+								<div class="stock unavailable">
+									<span><?= __('Out of stock') ?></span>
+								</div>
+							<?php endif; ?>
+						<?php endif; ?>
+					</div>
+				</div>
+			</div>
+			<?php if ($viewMode == 'list') : ?>
+				</div>
+			<?php endif; ?>
+		</div>
+	</div>
+</li>
