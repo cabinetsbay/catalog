@@ -7,7 +7,6 @@ use Magento\Catalog\Block\Product\ReviewRendererInterface as IReviewRenderer;
 use Magento\Catalog\Model\ResourceModel\Product\Collection as PC;
 use Magento\Framework\App\Action\Action;
 /** @var B $b */
-$pc = $b->getLoadedProductCollection(); /** @var PC $pc */
 echo $b->getToolbarHtml();
 echo $b->getAdditionalHtml();
 # 2024-06-17
@@ -48,7 +47,7 @@ $pos = $b->getPositioned();
 		<?php } ?>
 	<ol class="products list items product-items">
 		<?php /** @var $_product \Magento\Catalog\Model\Product */ ?>
-		<?php foreach ($pc as $_product): ?>
+		<?php foreach ($b->getLoadedProductCollection() as $_product): ?>
 			<li class="item product product-item">
 				<div class="product-item-info"
 					 data-container="product-<?=
