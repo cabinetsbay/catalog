@@ -3,6 +3,7 @@
 # "Refactor `vendor/cabinetsbay/catalog/view/frontend/templates/products.phtml`":
 # https://github.com/cabinetsbay/catalog/issues/38
 use CabinetsBay\Catalog\B\Products as B;
+use Magento\Catalog\Model\Product as P;
 /** @var B $b */
 echo $b->getToolbarHtml() . $b->getAdditionalHtml();
 # 2024-06-17
@@ -32,15 +33,7 @@ $viewMode = 'list';
 		?>
 </div>
 <?= $b->getChildBlock('toolbar')->setIsBottom(true)->toHtml() ?>
-<?php if (! $b->isRedirectToCartEnabled()) : ?>
-	<script type="text/x-magento-init">
-	{
-		"[data-role=tocart-form], .form.map.checkout": {
-			"catalogAddToCart": {
-				"product_sku": "<?= /* @NoEscape */
-		$_product->getSku() ?>"
-			}
-		}
-	}
-	</script>
-<?php endif; ?>
+<?php if (!$b->isRedirectToCartEnabled()) {
+	$lastProduct = df_last($b->getLoadedProductCollection()); /** @var P $lastProduct */
+	echo df_js_x('[data-role=tocart-form], .form.map.checkout', '', 'catalogAddToCart', ['product_sku' => $lastProduct->getSku()]);
+}
