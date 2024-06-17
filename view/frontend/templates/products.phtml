@@ -4,11 +4,9 @@
 # https://github.com/cabinetsbay/catalog/issues/38
 # 2024-06-17 "Move the catalog-related code to the `CabinetsBay_Catalog` module": https://github.com/cabinetsbay/catalog/issues/2
 use CabinetsBay\Catalog\B\Products as B;
-use Magento\Catalog\Model\ResourceModel\Product\Collection as PC;
 /** @var B $block */ $b = $block; /** @var B $b */
-$pc = $b->getLoadedProductCollection(); /** @var PC $pc */
-if (!$pc->count()) {
+if (!$b->getLoadedProductCollection()->count()) {
 	?><div class="message info empty"><div>We can\'t find products matching the selection.</div></div><?php }
 else {
-	echo df_block_output('CabinetsBay_Catalog', 'products/not-empty', ['b' => $b, 'pc' => $pc]);
+	echo df_block_output('CabinetsBay_Catalog', 'products/not-empty', ['b' => $b]);
 }
