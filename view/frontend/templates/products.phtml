@@ -12,7 +12,7 @@ if ($b->level() >= 3) :
 	$_helper = $this->helper('Magento\Catalog\Helper\Output');
 	if (! $_productCollection->count()): ?>
 		<div class="message info empty">
-			<div><?= /* @escapeNotVerified */
+			<div><?= 
 				__('We can\'t find products matching the selection.') ?></div>
 		</div>
 	<?php else: ?>
@@ -60,7 +60,7 @@ if ($b->level() >= 3) :
 				<?php foreach ($_productCollection as $_product): ?>
 					<li class="item product product-item">
 						<div class="product-item-info"
-							 data-container="product-<?= /* @escapeNotVerified */
+							 data-container="product-<?= 
 							 $viewMode ?>">
 							<?php
 							$productImage = $b->getImage($_product,
@@ -79,15 +79,15 @@ if ($b->level() >= 3) :
 							?>
 							<strong class="product name product-item-name product-item-name-second">
 								<a class="product-item-link"
-								   href="<?= /* @escapeNotVerified */
+								   href="<?= 
 								   $_product->getProductUrl() ?>">
-									<?= /* @escapeNotVerified */
+									<?= 
 									$_helper->productAttribute($_product,
 										$_product->getName(), 'name') ?>
 								</a>
 							</strong>
 							<?php // Product Image ?>
-							<a href="<?= /* @escapeNotVerified */
+							<a href="<?= 
 							$_product->getProductUrl() ?>"
 							   class="product photo product-item-photo"
 							   tabindex="-1">
@@ -104,9 +104,9 @@ if ($b->level() >= 3) :
 								?>
 								<strong class="product name product-item-name">
 									<a class="product-item-link"
-									   href="<?= /* @escapeNotVerified */
+									   href="<?= 
 									   $_product->getProductUrl() ?>">
-										<?= /* @escapeNotVerified */
+										<?= 
 										$_helper->productAttribute($_product,
 											$_product->getName(), 'name') ?>
 									</a>
@@ -116,15 +116,15 @@ if ($b->level() >= 3) :
 
 								<?php //if ($showDescription): ?>
 								<div class="product description product-item-description">
-									<?= /* @escapeNotVerified */
+									<?= 
 									$_helper->productAttribute($_product,
 										$_product->getShortDescription(),
 										'short_description') ?>
-									<a href="<?= /* @escapeNotVerified */
+									<a href="<?= 
 									$_product->getProductUrl() ?>"
-									   title="<?= /* @escapeNotVerified */
+									   title="<?= 
 									   $_productNameStripped ?>"
-									   class="action more"><?= /* @escapeNotVerified */
+									   class="action more"><?= 
 										__('Learn More') ?></a>
 								</div>
 								<?php //endif; ?>
@@ -132,7 +132,7 @@ if ($b->level() >= 3) :
 								<?php if ($viewMode == 'list') : ?>
 									</div><div class="product-view-col">
 								<?php endif; ?>
-								<?= /* @escapeNotVerified */
+								<?= 
 								$b->getProductPrice($_product) ?>
 								<?= $b->getProductDetailsHtml($_product) ?>
 
@@ -153,12 +153,12 @@ if ($b->level() >= 3) :
 													  method="post">
 													<input type="hidden"
 														   name="product"
-														   value="<?= /* @escapeNotVerified */
+														   value="<?= 
 														   $postParams['data']['product'] ?>">
 													<input type="hidden"
-														   name="<?= /* @escapeNotVerified */
+														   name="<?= 
 														   Action::PARAM_NAME_URL_ENCODED ?>"
-														   value="<?= /* @escapeNotVerified */
+														   value="<?= 
 														   $postParams['data'][Action::PARAM_NAME_URL_ENCODED] ?>">
 													<?= $b->getBlockHtml('formkey') ?>
 													<?php $qty = ($b->getProductDefaultQty() == 0) ? 1 :
@@ -166,26 +166,26 @@ if ($b->level() >= 3) :
 													<input type="number"
 														   name="qty"
 														   maxlength="4"
-														   value="<?php /* @escapeNotVerified */ echo $qty ?>"
-														   title="<?php /* @escapeNotVerified */ echo __('Qty') ?>" class="input-text qty form-control"
+														   value="<?php  echo $qty ?>"
+														   title="<?php  echo __('Qty') ?>" class="input-text qty form-control"
 														   data-validate="<?php echo $b->escapeHtml(json_encode($b->getQuantityValidators())) ?>"
 													/>
 													<button type="submit"
 															title="<?= $b->escapeHtml(__('Add to Cart')) ?>"
 															class="action tocart primary">
-														<span><?= /* @escapeNotVerified */
+														<span><?= 
 															__('Add to Cart') ?></span>
 													</button>
 												</form>
 											<?php else: ?>
 												<?php if ($_product->isAvailable()): ?>
 													<div class="stock available">
-														<span><?= /* @escapeNotVerified */
+														<span><?= 
 															__('In stock') ?></span>
 													</div>
 												<?php else: ?>
 													<div class="stock unavailable">
-														<span><?= /* @escapeNotVerified */
+														<span><?= 
 															__('Out of stock') ?></span>
 													</div>
 												<?php endif; ?>
