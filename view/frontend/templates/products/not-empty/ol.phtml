@@ -46,11 +46,7 @@ $pos = $b->getPositioned();
 					<?php if ($viewMode == 'list') : ?>
 					<div class="product-view-col">
 					<?php endif; ?>
-					<?php
-					$pNameStripped
-						= $b->stripTags($p->getName(),
-						null, true);
-					?>
+					<?php $pNameStripped = $b->stripTags($p->getName(), null, true); ?>
 					<strong class="product name product-item-name">
 						<a class="product-item-link"
 						   href="<?=
