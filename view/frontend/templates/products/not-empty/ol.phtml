@@ -3,16 +3,8 @@
 # "Refactor `vendor/cabinetsbay/catalog/view/frontend/templates/products.phtml`":
 # https://github.com/cabinetsbay/catalog/issues/38
 use CabinetsBay\Catalog\B\Products as B;
-use Magento\Catalog\Block\Product\ReviewRendererInterface as IReviewRenderer;
 use Magento\Catalog\Model\Product as P;
 /** @var B $b */
-# 2024-06-17
-# "The frontend product list pages should show products as a list on narrow screens and as a grid on wide screens":
-# https://github.com/cabinetsbay/catalog/issues/40
-$viewMode = 'list';
-$imageDisplayArea = 'category_page_list';
-$templateType = IReviewRenderer::FULL_VIEW;
-$pos = $b->getPositioned();
 ?>
 <ol class="products list items product-items">
 	<?php
