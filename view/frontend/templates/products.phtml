@@ -6,9 +6,9 @@
 use Magento\Framework\App\Action\Action;
 use CabinetsBay\Catalog\B\Products as B;
 /** @var B $block */ $b = $block; /** @var B $b */
-$_productCollection = $block->getLoadedProductCollection();
+$_productCollection = $b->getLoadedProductCollection();
 // Show products list only on 3rd category level
-if ($block->level() >= 3) :
+if ($b->level() >= 3) :
 	$_helper = $this->helper('Magento\Catalog\Helper\Output');
 	if (! $_productCollection->count()): ?>
 		<div class="message info empty">
@@ -16,10 +16,10 @@ if ($block->level() >= 3) :
 				__('We can\'t find products matching the selection.') ?></div>
 		</div>
 	<?php else: ?>
-		<?= $block->getToolbarHtml() ?>
-		<?= $block->getAdditionalHtml() ?>
+		<?= $b->getToolbarHtml() ?>
+		<?= $b->getAdditionalHtml() ?>
 		<?php
-		if ($block->getMode() == 'grid') {
+		if ($b->getMode() == 'grid') {
 			$viewMode = 'grid';
 			$imageDisplayArea = 'category_page_grid';
 			//$showDescription = false;
@@ -35,7 +35,7 @@ if ($block->level() >= 3) :
 		/**
 		 * Position for actions regarding image size changing in vde if needed
 		 */
-		$pos = $block->getPositioned();
+		$pos = $b->getPositioned();
 		?>
 		<div class="products wrapper <?= $viewMode ?> products-<?= $viewMode ?>">
 			<?php
@@ -52,8 +52,8 @@ if ($block->level() >= 3) :
 				 * 2.1) Level 4: https://localhost.com:2255/ready-to-assemble-cabinets/croydon-white-shaker/pantry-oven-cabinets.html
 				 * 2.2) Level 5: https://localhost.com:2255/ready-to-assemble-cabinets/croydon-white-shaker/pantry-oven-cabinets/pantry-cabinets.html
 				 */
-				if (df_category_level($block->getCurrentCategory()) > 3) { ?>
-					<h3><?=$block->getCurrentCategory()->getName(); ?></h3>
+				if (df_category_level($b->getCurrentCategory()) > 3) { ?>
+					<h3><?=$b->getCurrentCategory()->getName(); ?></h3>
 				<?php } ?>
 			<ol class="products list items product-items">
 				<?php /** @var $_product \Magento\Catalog\Model\Product */ ?>
@@ -63,7 +63,7 @@ if ($block->level() >= 3) :
 							 data-container="product-<?= /* @escapeNotVerified */
 							 $viewMode ?>">
 							<?php
-							$productImage = $block->getImage($_product,
+							$productImage = $b->getImage($_product,
 								$imageDisplayArea);
 							if ($pos != null) {
 								$position = ' style="left:'
@@ -74,7 +74,7 @@ if ($block->level() >= 3) :
 							?>
 							<?php
 							$_productNameStripped
-								= $block->stripTags($_product->getName(),
+								= $b->stripTags($_product->getName(),
 								null, true);
 							?>
 							<strong class="product name product-item-name product-item-name-second">
@@ -99,7 +99,7 @@ if ($block->level() >= 3) :
 								<?php endif; ?>
 								<?php
 								$_productNameStripped
-									= $block->stripTags($_product->getName(),
+									= $b->stripTags($_product->getName(),
 									null, true);
 								?>
 								<strong class="product name product-item-name">
@@ -111,7 +111,7 @@ if ($block->level() >= 3) :
 											$_product->getName(), 'name') ?>
 									</a>
 								</strong>
-								<?= $block->getReviewsSummaryHtml($_product,
+								<?= $b->getReviewsSummaryHtml($_product,
 									$templateType) ?>
 
 								<?php //if ($showDescription): ?>
@@ -133,8 +133,8 @@ if ($block->level() >= 3) :
 									</div><div class="product-view-col">
 								<?php endif; ?>
 								<?= /* @escapeNotVerified */
-								$block->getProductPrice($_product) ?>
-								<?= $block->getProductDetailsHtml($_product) ?>
+								$b->getProductPrice($_product) ?>
+								<?= $b->getProductDetailsHtml($_product) ?>
 
 								<div class="product-item-inner">
 									<div class="product actions product-item-actions"<?= strpos($pos,
@@ -145,9 +145,9 @@ if ($block->level() >= 3) :
 											: '' ?>>
 											<?php if ($_product->isSaleable()): ?>
 												<?php $postParams
-													= $block->getAddToCartPostParams($_product); ?>
+													= $b->getAddToCartPostParams($_product); ?>
 												<form data-role="tocart-form"
-													  data-product-sku="<?= $block->escapeHtml($_product->getSku()) ?>"
+													  data-product-sku="<?= $b->escapeHtml($_product->getSku()) ?>"
 													  action="<?= /* @NoEscape */
 													  $postParams['action'] ?>"
 													  method="post">
@@ -160,18 +160,18 @@ if ($block->level() >= 3) :
 														   Action::PARAM_NAME_URL_ENCODED ?>"
 														   value="<?= /* @escapeNotVerified */
 														   $postParams['data'][Action::PARAM_NAME_URL_ENCODED] ?>">
-													<?= $block->getBlockHtml('formkey') ?>
-													<?php $qty = ($block->getProductDefaultQty() == 0) ? 1 :
-													 $block->getProductDefaultQty(); ?>
+													<?= $b->getBlockHtml('formkey') ?>
+													<?php $qty = ($b->getProductDefaultQty() == 0) ? 1 :
+													 $b->getProductDefaultQty(); ?>
 													<input type="number"
 														   name="qty"
 														   maxlength="4"
 														   value="<?php /* @escapeNotVerified */ echo $qty ?>"
 														   title="<?php /* @escapeNotVerified */ echo __('Qty') ?>" class="input-text qty form-control"
-														   data-validate="<?php echo $block->escapeHtml(json_encode($block->getQuantityValidators())) ?>"
+														   data-validate="<?php echo $b->escapeHtml(json_encode($b->getQuantityValidators())) ?>"
 													/>
 													<button type="submit"
-															title="<?= $block->escapeHtml(__('Add to Cart')) ?>"
+															title="<?= $b->escapeHtml(__('Add to Cart')) ?>"
 															class="action tocart primary">
 														<span><?= /* @escapeNotVerified */
 															__('Add to Cart') ?></span>
@@ -196,7 +196,7 @@ if ($block->level() >= 3) :
 											$viewMode . '-secondary')
 											? $position : '' ?>>
 											<?php if ($addToBlock
-												= $block->getChildBlock('addto')
+												= $b->getChildBlock('addto')
 											): ?>
 												<?= $addToBlock->setProduct($_product)
 													->getChildHtml() ?>
@@ -213,8 +213,8 @@ if ($block->level() >= 3) :
 				<?php endforeach; ?>
 			</ol>
 		</div>
-	<?= $block->getChildBlock('toolbar')->setIsBottom(true)->toHtml() ?>
-		<?php if (! $block->isRedirectToCartEnabled()) : ?>
+	<?= $b->getChildBlock('toolbar')->setIsBottom(true)->toHtml() ?>
+		<?php if (! $b->isRedirectToCartEnabled()) : ?>
 			<script type="text/x-magento-init">
 			{
 				"[data-role=tocart-form], .form.map.checkout": {
@@ -228,4 +228,4 @@ if ($block->level() >= 3) :
 			</script>
 		<?php endif; ?>
 	<?php endif; ?>
-<?php endif; /*if($block->level() == 3) :*/
+<?php endif; /*if($b->level() == 3) :*/
