@@ -28,8 +28,9 @@ $pos = $b->getPositioned();
 		?>
 		<?php $pNameStripped = $b->stripTags($p->getName(), null, true); ?>
 		<strong class="product name product-item-name product-item-name-second">
-			<a class="product-item-link"
-			   href="<?= $p->getProductUrl() ?>">
+			<a
+				class="product-item-link"
+				href="<?= $p->getProductUrl() ?>">
 				<?= df_product_att_html($p, $p->getName(), 'name') ?>
 			</a>
 		</strong>
