@@ -23,7 +23,9 @@ echo df_tag('div', df_cc_s('products', 'wrapper', $viewMode, "products-$viewMode
 	# 2.1) Level 4: https://localhost.com:2255/ready-to-assemble-cabinets/croydon-white-shaker/pantry-oven-cabinets.html
 	# 2.2) Level 5: https://localhost.com:2255/ready-to-assemble-cabinets/croydon-white-shaker/pantry-oven-cabinets/pantry-cabinets.html
 	3 === df_category_level() ? '' : df_tag('h3', [], df_category_current()->getName())
-	,df_block_output('CabinetsBay_Catalog', 'products/not-empty/ol', ['b' => $b])
+	,df_tag('ol', 'products list items product-items', df_cc_n(df_map(function(P $p) use($b):string {return df_block_output(
+		'CabinetsBay_Catalog', 'products/not-empty/product', ['b' => $b, 'p' => $p]
+	);}, $b->getLoadedProductCollection())))
 ));
 echo $b->getChildBlock('toolbar')->setIsBottom(true)->toHtml();
 if (!$b->isRedirectToCartEnabled()) {
