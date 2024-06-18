@@ -6,7 +6,6 @@
 // @used-by https://github.com/cabinetsbay/core/blob/0.3.5/view/frontend/templates/head.phtml#L35
 define(['jquery', 'domReady!'], $ => {
 	const $w = $(window);
-	//return;
 	// 2024-06-17 I use `div.` to distinguish the element from `ol.products`.
 	const $c = $('div.products', $('body.page-products'));
 	if ($c.length) {
