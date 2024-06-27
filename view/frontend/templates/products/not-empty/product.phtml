@@ -12,13 +12,12 @@ use Magento\Framework\App\Action\Action;
 # https://github.com/cabinetsbay/catalog/issues/40
 # 2024-06-27
 # "Products are wrongly displayed on frontend category pages on narrow screens": https://github.com/cabinetsbay/catalog/issues/42
-$viewMode = 'grid';
 $imageDisplayArea = 'category_page_list';
 $templateType = IReviewRenderer::FULL_VIEW;
 $pos = $b->getPositioned();
 ?>
 <li class="item product product-item">
-	<div class="product-item-info" data-container="product-<?= $viewMode ?>">
+	<div class="product-item-info" data-container='product-grid'>
 		<?php
 		$productImage = $b->getImage($p, $imageDisplayArea);
 		if ($pos != null) {
@@ -42,9 +41,6 @@ $pos = $b->getPositioned();
 			tabindex="-1"
 		><?= $productImage->toHtml() ?></a>
 		<div class="product details product-item-details">
-			<?php if ($viewMode == 'list') : ?>
-				<div class="product-view-col">
-			<?php endif; ?>
 			<?php $pNameStripped = $b->stripTags($p->getName(), null, true); ?>
 			<strong class="product name product-item-name">
 				<a
@@ -61,18 +57,11 @@ $pos = $b->getPositioned();
 					class="action more"
 				>Learn More</a>
 			</div>
-			<?php if ($viewMode == 'list') : ?>
-				</div><div class="product-view-col">
-			<?php endif; ?>
 			<?= $b->getProductPrice($p) ?>
 			<?= $b->getProductDetailsHtml($p) ?>
 			<div class="product-item-inner">
-				<div class="product actions product-item-actions"<?= strpos($pos,
-					$viewMode . '-actions') ? $position
-					: '' ?>>
-					<div class="actions-primary"<?= strpos($pos,
-						$viewMode . '-primary') ? $position
-						: '' ?>>
+				<div class="product actions product-item-actions"<?= strpos($pos, 'grid-actions') ? $position : '' ?>>
+					<div class="actions-primary"<?= strpos($pos, 'grid-primary') ? $position : '' ?>>
 						<?php if ($p->isSaleable()): ?>
 							<?php $postParams
 								= $b->getAddToCartPostParams($p); ?>
@@ -119,9 +108,6 @@ $pos = $b->getPositioned();
 					</div>
 				</div>
 			</div>
-			<?php if ($viewMode == 'list') : ?>
-				</div>
-			<?php endif; ?>
 		</div>
 	</div>
 </li>
