@@ -11,9 +11,8 @@ echo $b->getToolbarHtml() . $b->getAdditionalHtml();
 # https://github.com/cabinetsbay/catalog/issues/40
 # 2024-06-27
 # "Products are wrongly displayed on frontend category pages on narrow screens": https://github.com/cabinetsbay/catalog/issues/42
-$viewMode = 'grid';
 echo df_tag('div',
-	df_cc_s('products', 'wrapper', $viewMode, "products-$viewMode")
+	df_cc_s('products', 'wrapper', 'grid', 'products-grid')
 	,df_cc_n(
 		# 2024-03-10
 		# 1.1) Level 0: «Root Catalog».
