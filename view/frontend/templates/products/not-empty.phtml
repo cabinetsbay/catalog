@@ -9,7 +9,9 @@ echo $b->getToolbarHtml() . $b->getAdditionalHtml();
 # 2024-06-17
 # "The frontend product list pages should show products as a list on narrow screens and as a grid on wide screens":
 # https://github.com/cabinetsbay/catalog/issues/40
-$viewMode = 'list';
+# 2024-06-27
+# "Products are wrongly displayed on frontend category pages on narrow screens": https://github.com/cabinetsbay/catalog/issues/42
+$viewMode = 'grid';
 echo df_tag('div',
 	df_cc_s('products', 'wrapper', $viewMode, "products-$viewMode")
 	,df_cc_n(
