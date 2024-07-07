@@ -4,11 +4,6 @@
 // https://github.com/cabinetsbay/site/issues/119
 // 2024-07-08 " Refactor `view/frontend/web/css/_products.less`": https://github.com/cabinetsbay/catalog/issues/43
 @import 'products/_grid.less';
-.product-item {
-	border: 1px solid #7ea9b2; margin-bottom: 1em !important; padding: 1em;
-	.product-item-details .product-item-name {display: none;}
-}
-.product-item-info {width: 100% !important;}
 .page-products {
 	.price-box {
 		border-top: 1px solid #e8f5f6;
@@ -16,6 +11,11 @@
 		.price {font-size: 1.6em;}
 	}
 }
+.product-item {
+	border: 1px solid #7ea9b2; margin-bottom: 1em !important; padding: 1em;
+	.product-item-details .product-item-name {display: none;}
+}
+.product-item-info {width: 100% !important;}
 .product-item-name .product-item-link {font-size: 1.4em; font-weight: bold !important;}
 .product-info-main {
 	.product.attribute.sku, .product.attribute.sku > .type {color: #72a1ab; font-weight: 300;}
