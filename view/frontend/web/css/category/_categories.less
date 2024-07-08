@@ -15,6 +15,10 @@
 		display: block;
 		margin: 0; // 2024-05-24 It overcomes `margin-block-start: 1em; margin-block-end: 1em;` set by browsers.
 		padding-left: 0; // 2024-05-24 It overcomes `padding-inline-start: 40px;` set by browsers.
+		// 2024-07-08
+		// "A category block in the «Matching Styles» section of the `/catalog/category/view/id/3814` page is too small":
+		// https://github.com/cabinetsbay/catalog/issues/44
+		width: 100%;
 		> li {
 			display: inline-block;
 			//flex: 0 0 auto;
