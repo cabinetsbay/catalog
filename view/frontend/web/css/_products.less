@@ -10,7 +10,10 @@
 		padding-top: 1em;
 		.price {font-size: 1.6em;}
 	}
-	.product-item .product-item-details .product-item-name {display: none;}
+	// 2024-07-14
+	// 1) `.products-grid` is important here.
+	// 2) "Product names are missing from the mini-cart": https://github.com/cabinetsbay/core/issues/17
+	.products-grid .product-item .product-item-details .product-item-name {display: none;}
 }
 .product-item {border: 1px solid #7ea9b2; margin-bottom: 1em !important; padding: 1em;}
 .product-item-info {width: 100% !important;}
