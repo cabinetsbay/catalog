@@ -2,10 +2,9 @@
 # 2024-03-14
 # "Refactor `app/design/frontend/Cabinetsbay/cabinetsbay_default/Magento_Catalog/templates/category/view.phtml`":
 # https://github.com/cabinetsbay/catalog/issues/18
-use Magento\Catalog\Model\ResourceModel\Category\Collection as CC;
 use CabinetsBay\Catalog\B\Category as B;
 /** @var B $b */
-$echo = df_block_echo('CabinetsBay_Catalog', 'category/l2/l3', [
+# 2024-09-02 https://3v4l.org/NNHbU
+df_block_echo('CabinetsBay_Catalog', 'category/l2/l3', [
 	'cc' => df_category_children($b->getCurrentCategory())->setOrder('position', 'ASC')
-]);
-$echo('filters', 'items');
+])('filters', 'items');
