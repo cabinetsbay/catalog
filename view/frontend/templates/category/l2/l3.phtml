@@ -5,6 +5,6 @@
 use CabinetsBay\Catalog\B\Category as B;
 /** @var B $b */
 # 2024-09-02 https://3v4l.org/NNHbU
-df_block_echo('CabinetsBay_Catalog', 'category/l2/l3', [
+df_block_echo($b, 'category/l2/l3', [
 	'cc' => df_category_children($b->getCurrentCategory())->setOrder('position', 'ASC')
 ])('filters', 'items');
