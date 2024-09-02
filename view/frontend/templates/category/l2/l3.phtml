@@ -5,6 +5,7 @@
 use Magento\Catalog\Model\ResourceModel\Category\Collection as CC;
 use CabinetsBay\Catalog\B\Category as B;
 /** @var B $b */
-$cc = df_category_children($b->getCurrentCategory())->setOrder('position', 'ASC'); /** @var CC $cc */
-$echo = df_block_echo('CabinetsBay_Catalog', 'category/l2/l3', ['cc' => $cc]);
+$echo = df_block_echo('CabinetsBay_Catalog', 'category/l2/l3', [
+	'cc' => df_category_children($b->getCurrentCategory())->setOrder('position', 'ASC')
+]);
 $echo('filters', 'items');
