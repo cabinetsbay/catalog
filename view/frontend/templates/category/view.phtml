@@ -5,11 +5,7 @@
 use Magento\Catalog\Helper\Category as H;
 use CabinetsBay\Catalog\B\Category as B;
 /** @var B $block */ $b = $block; /** @var B $b */
-$echo = function(string ...$tt) use($b):void {
-	df_map($tt, function(string $t) use($b):void {
-		echo df_block_output('CabinetsBay_Catalog', "category/$t", ['b' => $b]);
-	});
-};
+$echo = df_block_echo('CabinetsBay_Catalog', 'category', ['b' => $b]);
 if (2 === $b->level()) {
 	$echo('l2/top', 'l2/l3', 'l2/bottom');
 }
