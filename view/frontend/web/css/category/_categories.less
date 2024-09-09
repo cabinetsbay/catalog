@@ -32,6 +32,14 @@
 			}
 			@media screen and (min-width: 681px) {
 				// 2024-05-24 `width: 32.3%;` does not work on non-L2 pages for an unknown reason.
+				// 2024-09-09
+				// 1) "The 3rd column of product subcategories is sometimes (randomly and rarely) shifted to the next row
+				// on the frontend L2 category pages in Google Chrome": https://github.com/cabinetsbay/catalog/issues/48
+				// 2) It seems to be a bug of Google Chrome.
+				// My code is correct:
+				//		32.3% x 3 = 96.9%
+				//		1.55% x 2 = 3.1%
+				//		96.9% + 3.1% = 100%
 				width: 32.1%; body.cb-category-level-2 & {width: 32.3%;}
 				&:nth-child(3n + 2) {padding: 0 1.55%;} // 2024-05-24 https://stackoverflow.com/a/13691714
 			}
