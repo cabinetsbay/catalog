@@ -14,11 +14,7 @@ use Magento\Catalog\Block\Product\ReviewRendererInterface as IReviewRenderer;
 use Magento\Catalog\Model\Product as P;
 use Magento\Framework\App\Action\Action;
 /** @var B $b */ /** @var P $p */
-$pos = $b['positioned'];
 $image = $b->getImage($p, 'category_page_list');
-if ($pos != null) {
-	$position = " style='left: {$image->getWidth()}px; top: {$image->getHeight()}px;'";
-}
 ?>
 <li class="item product product-item">
 	<div class="product-item-info" data-container='product-grid'>
@@ -55,8 +51,14 @@ if ($pos != null) {
 			<?= $b->getProductPrice($p) ?>
 			<?= $b->getProductDetailsHtml($p) ?>
 			<div class="product-item-inner">
-				<div class="product actions product-item-actions"<?= strpos($pos, 'grid-actions') ? $position : '' ?>>
-					<div class="actions-primary"<?= strpos($pos, 'grid-primary') ? $position : '' ?>>
+				<?php
+					$pos = $b['positioned'];
+					if ($pos != null) {
+						$style = " style='left: {$image->getWidth()}px; top: {$image->getHeight()}px;'";
+					}
+				?>
+				<div class="product actions product-item-actions"<?= strpos($pos, 'grid-actions') ? $style : '' ?>>
+					<div class="actions-primary"<?= strpos($pos, 'grid-primary') ? $style : '' ?>>
 						<?php if ($p->isSaleable()): ?>
 							<?php $postParams
 								= $b->getAddToCartPostParams($p); ?>
