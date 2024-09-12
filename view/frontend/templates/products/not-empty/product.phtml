@@ -60,10 +60,10 @@ $image = $b->getImage($p, 'category_page_list');
 					# https://github.com/cabinetsbay/site/issues/181
 					# 3) "Passing `null` to non-nullable parameters of built-in functions became deprecated in PHP 8.1":
 					# https://github.com/cabinetsbay/site/issues/182
-					/** @var string $pos */
-					if (!df_es($pos = (string)$b['positioned'])) {
-						$style = " style='left: {$image->getWidth()}px; top: {$image->getHeight()}px;'";
-					}
+					$style = df_es($pos = (string)$b['positioned'])
+						? ''
+						: " style='left: {$image->getWidth()}px; top: {$image->getHeight()}px;'"
+					; /** @var string $pos */ /** @var string $style */
 				?>
 				<div class="product actions product-item-actions"<?= strpos($pos, 'grid-actions') ? $style : '' ?>>
 					<div class="actions-primary"<?= strpos($pos, 'grid-primary') ? $style : '' ?>>
