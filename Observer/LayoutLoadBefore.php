@@ -19,14 +19,18 @@ final class LayoutLoadBefore implements ObserverInterface {
 	function execute(O $o):void {
 		/** @var bool $l */
 		if ($l = df_is_catalog_product_list()) {
-			df_body_class(
-				'cb-category-level-' . df_category_level()
-				 # 2024-06-10
-				 # "Handle category levels > 3": https://github.com/cabinetsbay/catalog/issues/36
-				 # 1) Level 4: https://localhost.com:2255/ready-to-assemble-cabinets/croydon-white-shaker/pantry-oven-cabinets.html
-				 # 2) Level 5: https://localhost.com:2255/ready-to-assemble-cabinets/croydon-white-shaker/pantry-oven-cabinets/pantry-cabinets.html
-				,3 > df_category_level() ? '' : 'cb-category-level-ge3'
-			);
+			$ge3 = !cb_category_is_l2(); /** @var bool $ge3 */
+			 # 2024-06-10
+			 # "Handle category levels > 3": https://github.com/cabinetsbay/catalog/issues/36
+			 # 1) Level 4: https://localhost.com:2255/ready-to-assemble-cabinets/croydon-white-shaker/pantry-oven-cabinets.html
+			 # 2) Level 5: https://localhost.com:2255/ready-to-assemble-cabinets/croydon-white-shaker/pantry-oven-cabinets/pantry-cabinets.html
+			df_body_class('cb-category-level-' . df_category_level(), $ge3 ? '' : 'cb-category-level-ge3');
+			# 2024-09-12
+			# 1) "Refactor the `Sharapov_Cabinetsbay` module": https://github.com/cabinetsbay/site/issues/98
+			# 2) https://github.com/cabinetsbay/catalog/blob/0.1.9/B/Products.php#L35-L38
+			if ($ge3 && 1 < (int)df_request('p')) {
+				df_page_config()->setRobots('NOINDEX,FOLLOW');
+			}
 		}
 		if ($l || df_is_catalog_product_view()) {
 			# Dmitrii Fediuk https://upwork.com/fl/mage2pro
