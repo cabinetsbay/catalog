@@ -24,7 +24,7 @@ final class LayoutLoadBefore implements ObserverInterface {
 			 # "Handle category levels > 3": https://github.com/cabinetsbay/catalog/issues/36
 			 # 1) Level 4: https://localhost.com:2255/ready-to-assemble-cabinets/croydon-white-shaker/pantry-oven-cabinets.html
 			 # 2) Level 5: https://localhost.com:2255/ready-to-assemble-cabinets/croydon-white-shaker/pantry-oven-cabinets/pantry-cabinets.html
-			df_body_class('cb-category-level-' . df_category_level(), $ge3 ? '' : 'cb-category-level-ge3');
+			df_body_class('cb-category-level-' . df_category_level(), $ge3 ? 'cb-category-level-ge3' : '');
 			# 2024-09-12
 			# 1) "Refactor the `Sharapov_Cabinetsbay` module": https://github.com/cabinetsbay/site/issues/98
 			# 2) https://github.com/cabinetsbay/catalog/blob/0.1.9/B/Products.php#L35-L38
