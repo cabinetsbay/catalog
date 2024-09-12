@@ -16,7 +16,6 @@ use Magento\Framework\App\Action\Action;
 # 2024-06-27
 # "Products are wrongly displayed on frontend category pages on narrow screens": https://github.com/cabinetsbay/catalog/issues/42
 $imageDisplayArea = 'category_page_list';
-$templateType = IReviewRenderer::FULL_VIEW;
 $pos = $b['positioned'];
 ?>
 <li class="item product product-item">
@@ -51,7 +50,7 @@ $pos = $b['positioned'];
 					href="<?= $p->getProductUrl() ?>"
 				><?= df_product_att_html($p, $p->getName(), 'name') ?></a>
 			</strong>
-			<?= $b->getReviewsSummaryHtml($p, $templateType) ?>
+			<?= $b->getReviewsSummaryHtml($p, IReviewRenderer::FULL_VIEW) ?>
 			<div class="product description product-item-description">
 				<?= df_product_att_html($p, $p->getShortDescription(), 'short_description') ?>
 				<a
