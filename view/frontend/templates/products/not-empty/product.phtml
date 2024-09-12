@@ -52,7 +52,15 @@ $image = $b->getImage($p, 'category_page_list');
 			<?= $b->getProductDetailsHtml($p) ?>
 			<div class="product-item-inner">
 				<?php
-					$pos = $b['positioned'];
+					# 2024-09-12
+					# 1) "«strpos(): Passing null to parameter #1 ($haystack) of type string is deprecated
+					# in vendor/cabinetsbay/catalog/view/frontend/templates/products/not-empty/product.phtml on line 63»
+					# in PHP 8.1": https://github.com/cabinetsbay/catalog/issues/50
+					# 2) "«strpos(): Passing null to parameter #1 ($haystack) of type string is deprecated» in PHP 8.1":
+					# https://github.com/cabinetsbay/site/issues/181
+					# 3) "Passing `null` to non-nullable parameters of built-in functions became deprecated in PHP 8.1":
+					# https://github.com/cabinetsbay/site/issues/182
+					$pos = (string)$b['positioned'];
 					if ($pos != null) {
 						$style = " style='left: {$image->getWidth()}px; top: {$image->getHeight()}px;'";
 					}
