@@ -29,7 +29,7 @@ final class LayoutLoadBefore implements ObserverInterface {
 			# 1) "Refactor the `Sharapov_Cabinetsbay` module": https://github.com/cabinetsbay/site/issues/98
 			# 2) https://github.com/cabinetsbay/catalog/blob/0.1.9/B/Products.php#L35-L38
 			if ($ge3 && 1 < (int)df_request('p')) {
-				df_page_config()->setRobots('NOINDEX,FOLLOW');
+				df_robots_no_index();
 			}
 		}
 		if ($l || df_is_catalog_product_view()) {
